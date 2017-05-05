@@ -1,11 +1,12 @@
-# Project - *Name of your app*
+﻿# Project - *Name of your app*
 
 **Name of your app** là repository cho đồ án nhóm. Nhóm tối đa 4 thành viên.
 
 Thành viên:
 * [ ] **MSSV1** Tên sinh viên 1 (tên tài khoản github)
 * [ ] **MSSV2** Tên sinh viên 2 (tên tài khoản github)
-
+* [ ] **MSSV3** Tên sinh viên 2 (tên tài khoản github)
+* [ ] **MSSV4** Tên sinh viên 2 (tên tài khoản github)
 URL: **URL hosting của bài tập**
 
 ## Yêu cầu
