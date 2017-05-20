@@ -20,13 +20,13 @@ const pool = require('./app/model/pg');
 
 require('./config/passport')(passport,pool);
 
-var hbs = exphbs.create({ defaultLayout: 'main' ,
+var hbs = exphbs.create({ defaultLayout: 'main-user' ,
 	helpers: {
 		inc : function(value, options)
 			{
 			    return parseInt(value) + 1;
 			}
-	}
+	},
 });
 
 require('./config/express')(app,hbs,express, session,morgan,cookieParser,bodyParser,passport,flash);

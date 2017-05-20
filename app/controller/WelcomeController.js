@@ -2,7 +2,7 @@
 
 var WelcomeController = {
 	index: function(req, res) {
-		res.render('index'); // load the index.ejs file
+		res.render('user/index'); // load the index.ejs file
 	}
 	
 }
