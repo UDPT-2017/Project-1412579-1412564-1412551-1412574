@@ -134,8 +134,7 @@ a.simpleCart_empty {
 /*----*/
 /*--end-top-header--*/
 /*--starts-bottom-header--*/
-.header-bottom {
-	text-align: center;
+.header-bottom {;
 	padding: 10px 0px;
 }
 
@@ -1033,7 +1032,7 @@ ul.size {
 	margin-top: 7px;
 }
 .top-header-middle img{
-	width:100%;
+	width:50%;
 }
 .box_1 {
 	margin-top: 3px;
@@ -1101,8 +1100,21 @@ ul.size {
 }
 @media(max-width:768px){
 .top-header-left,.top-header-middle,.top-header-right{
-	width: 33.3%;
 	float: left;
+}
+
+.top-header-left,.top-header-right{
+	float: none;
+	margin:0px auto;
+}
+
+.top-header-middle a img {
+	float: none;
+	margin:0px auto;
+}
+
+.top-header-middle{
+	margin: 10px;
 }
 .account-left {
 	width: 50%;
@@ -1437,6 +1449,15 @@ ul.unit li span {
 @media(max-width:480px){
 .top-header-left, .top-header-middle, .top-header-right {
 	padding: 0 5px;
+}
+.top-header-left,.top-header-right{
+	float: none;
+	margin:0px auto;
+}
+
+.top-header-middle a img {
+	float: none;
+	margin:0px auto;
 }
 .col-md-9.p-left {
 	padding: 0;
@@ -1834,3 +1855,8 @@ ul.product-categories li a {
 }
 }
 /*---- responsive-design -----*/
+
+.mid {
+	float: none;
+	margin:0px auto;
+}

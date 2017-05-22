@@ -1,15 +1,19 @@
 // app/routes.js
 
 var WelcomeController = require('../app/controller/WelcomeController');
-var MailController = require('../app/controller/MailController');
 var LoginController = require('../app/controller/LoginController');
+var AdminController = require('../app/controller/AdminController');
+var CategoryController = require('../app/controller/CategoryController');
+
 
 module.exports = function(app, passport,pool) {
 
 	
 	app.get('/', WelcomeController.index);
 
-	
+	app.get('/admin', AdminController.dashboard);	
+	app.get('/admin/category/add', CategoryController.add);
+	app.post('/admin/category/add', CategoryController.postadd);
 
 	// show the login form
 	app.get('/login', Logged, LoginController.formLogin);
