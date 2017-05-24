@@ -25,9 +25,37 @@ var hbs = exphbs.create({ defaultLayout: 'main-user' ,
 		inc : function(value, options)
 			{
 			    return parseInt(value) + 1;
-			}
+			},
+		ifCond: function (v1, operator, v2, options) {
+		    switch (operator) {
+		        case '==':
+		            return (v1 == v2) ? options.fn(this) : options.inverse(this);
+		        case '===':
+		            return (v1 === v2) ? options.fn(this) : options.inverse(this);
+		        case '!=':
+		            return (v1 != v2) ? options.fn(this) : options.inverse(this);
+		        case '!==':
+		            return (v1 !== v2) ? options.fn(this) : options.inverse(this);
+		        case '<':
+		            return (v1 < v2) ? options.fn(this) : options.inverse(this);
+		        case '<=':
+		            return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+		        case '>':
+		            return (v1 > v2) ? options.fn(this) : options.inverse(this);
+		        case '>=':
+		            return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+		        case '&&':
+		            return (v1 && v2) ? options.fn(this) : options.inverse(this);
+		        case '||':
+		            return (v1 || v2) ? options.fn(this) : options.inverse(this);
+		        default:
+		            return options.inverse(this);
+		    }
+		}
 	},
 });
+
+
 
 require('./config/express')(app,hbs,express, session,morgan,cookieParser,bodyParser,passport,flash);
 

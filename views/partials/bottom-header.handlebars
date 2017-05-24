@@ -13,7 +13,9 @@
 								<div class="col1 me-one">
 									<ul>
 										{{#each cate}}
-										<li><a href="/{{id}}/{{alias}}">{{name}}</a></li>
+										{{#if hide}}
+											<li><a href="/{{id}}/{{alias}}">{{name}}</a></li>
+										{{/if}}
 										{{/each}}
 									</ul>
 			

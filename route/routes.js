@@ -8,12 +8,24 @@ var CategoryController = require('../app/controller/CategoryController');
 
 module.exports = function(app, passport,pool) {
 
-	
+	//Home
 	app.get('/', WelcomeController.index);
 
+
+	//Category
 	app.get('/admin', AdminController.dashboard);	
 	app.get('/admin/category/add', CategoryController.add);
 	app.post('/admin/category/add', CategoryController.postadd);
+
+	app.get('/admin/category/edit/:id', CategoryController.edit);
+	app.post('/admin/category/edit/:id', CategoryController.postedit);
+
+	app.get('/admin/category/list', CategoryController.list);
+
+	app.post('/admin/category/update-visible', CategoryController.visible);
+
+	app.post('/admin/category/delete', CategoryController.delete);
+
 
 	// show the login form
 	app.get('/login', Logged, LoginController.formLogin);
@@ -46,7 +58,11 @@ module.exports = function(app, passport,pool) {
 	// =====================================
 	app.get('/logout', LoginController.logout);
 
-		
+	app.get('*',function(req,res){
+		res.render('user/404',{
+			layout: false,
+		});
+	})
 
 };
 
