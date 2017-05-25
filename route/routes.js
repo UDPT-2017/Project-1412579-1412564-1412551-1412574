@@ -4,7 +4,19 @@ var WelcomeController = require('../app/controller/WelcomeController');
 var LoginController = require('../app/controller/LoginController');
 var AdminController = require('../app/controller/AdminController');
 var CategoryController = require('../app/controller/CategoryController');
+var ProductController = require('../app/controller/ProductController');
 
+var multer  =   require('multer');
+var storage =   multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, 'public/product');
+  },
+  filename: function (req, file, callback) {
+    callback(null, Date.now() +"-" + file.originalname);
+  }
+});
+
+var upload = multer({ storage : storage });
 
 module.exports = function(app, passport,pool) {
 
@@ -25,6 +37,21 @@ module.exports = function(app, passport,pool) {
 	app.post('/admin/category/update-visible', CategoryController.visible);
 
 	app.post('/admin/category/delete', CategoryController.delete);
+
+	//product
+	app.get('/admin/product/add', ProductController.add);
+	app.post('/admin/product/add', ProductController.postadd);
+
+	app.get('/admin/product/edit/:id', ProductController.edit);
+	app.post('/admin/product/edit/:id', ProductController.postedit);
+
+	app.get('/admin/product/list', ProductController.list);
+
+	app.post('/admin/product/update-visible', ProductController.visible);
+
+	app.post('/admin/product/delete', ProductController.delete);
+	app.post('/admin/product/delete-img', ProductController.delimg);
+	app.post('/admin/product/delete-pImg', ProductController.delpImg);
 
 
 	// show the login form

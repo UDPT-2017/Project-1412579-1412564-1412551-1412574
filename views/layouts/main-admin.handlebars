@@ -21,10 +21,11 @@
 	<link rel="stylesheet" href="/assets/css/neon-forms.css">
 	<link rel="stylesheet" href="/assets/css/custom.css">
 	<link rel="stylesheet" href="/assets/js/datatables/datatables.css">
+	<link rel="stylesheet" href="/assets/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
 	<link rel="stylesheet" href="/css/screen.css">
 
-	<script src="/assets/js/jquery-1.11.3.min.js"></script>
+	<script src="/assets/js/jquery-2.2.3.min.js"></script>
 	
 
 	<!--[if lt IE 9]><script src="/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -94,7 +95,25 @@
 						</li>
 						<li>
 							<a href="/admin/category/add">
-								<span class="title">Thêm danh mục</span>
+								<span class="title">Thêm danh mục mới</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="has-sub">
+					<a href="#">
+						<i class="entypo-layout"></i>
+						<span class="title">Quản lý sản phẩm</span>
+					</a>
+					<ul>
+						<li>
+							<a href="/admin/product/list">
+								<span class="title">Danh sách sản phẩm</span>
+							</a>
+						</li>
+						<li>
+							<a href="/admin/product/add">
+								<span class="title">Thêm sản phẩm mới</span>
 							</a>
 						</li>
 					</ul>
@@ -120,7 +139,8 @@
 	<script src="/assets/js/resizeable.js"></script>
 	<script src="/assets/js/neon-api.js"></script>
 	<script src="/assets/js/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-
+	
+	
 
 	<!-- Imported scripts on this page -->
 	<script src="/assets/js/jvectormap/jquery-jvectormap-europe-merc-en.js"></script>
@@ -131,19 +151,33 @@
 	<script src="/assets/js/morris.min.js"></script>
 	<script src="/assets/js/toastr.js"></script>
 	<script src="/assets/js/neon-chat.js"></script>
+	<script src="/myscript.js"></script>
+	
+	
 
 	<script src="/assets/js/datatables/datatables.js"></script>
 
 	<!-- JavaScripts initializations and stuff -->
 	<script src="/assets/js/neon-custom.js"></script>
 
-
+	<script src="/
+	assets/js/fileinput.js"></script>
 	<!-- Imported scripts on this page -->
 	<script src="/assets/js/bootstrap-switch.min.js"></script>
 
 	<!-- Demo Settings -->
 	<script src="/assets/js/neon-demo.js"></script>
 	<script src="/js/jquery.validate.min.js"></script>
+
+	<script src="/assets/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+
+	<script>
+	  $(document).ready(function () {
+	    //bootstrap WYSIHTML5 - text editor
+	    $(".textarea").wysihtml5();
+	  });
+	</script>
+
 
 </body>
 </html>

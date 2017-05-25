@@ -39,10 +39,14 @@
 							<thead>
 								<tr>
 									<th data-hide="phone">ID</th>
-									<th>Tên danh mục</th>
-									<th data-hide="phone">Ưu tiên</th>
+									<th>Thumbnail</th>
+									<th>Tên sản phẩm</th>
+									<th data-hide="phone">Giá</th>
 									<th data-hide="phone,tablet">Hiện</th>
-									<th>Thời gian cập nhật</th>
+									<th>Người tạo</th>
+									<th>Danh mục</th>
+									<th>Thời gian tạo</th>
+									<th>Cập nhật gần đây</th>
 									<th>Thao tác</th>
 								</tr>
 							</thead>
@@ -50,8 +54,15 @@
 								<tr class="odd gradeX">
 								{{#each list}}
 									<td>{{id}}</td>
+									<td>
+										{{#if image}}
+										<img src="/product/{{image}}" height="auto" width="50">
+										{{else}}
+										<i>No image</i>
+										{{/if}}
+									</td>
 									<td>{{name}}</td>
-									<td>{{orderb}}</td>
+									<td>{{price}}</td>
 									<td class="center">
 										{{#if hide}}
 											<div class="make-switch" data-on="primary" data-off="info">
@@ -65,14 +76,17 @@
 											</div>
 										{{/if}}
 									</td>
+									<td>{{fullname}}</td>
+									<td>{{catename}}</td>
+									<td>{{created_at}}</td>
 									<td>{{updated_at}}</td>
 									<td class="center">
-										<a href="/admin/category/edit/{{id}}" class="btn btn-primary btn-sm btn-icon icon-left">
+										<a href="/admin/product/edit/{{id}}" class="btn btn-primary btn-sm btn-icon icon-left">
 											<i class="entypo-pencil"></i>
 											Sửa
 										</a>
 										
-										<a href="javascript:void(0)" class="btn btn-danger btn-sm btn-icon icon-left deleteCate">
+										<a href="javascript:void(0)" class="btn btn-danger btn-sm btn-icon icon-left deleteProduct">
 											<i class="entypo-cancel"></i>
 											Xoá
 										</a>
@@ -83,10 +97,14 @@
 							<tfoot>
 								<tr>
 									<th data-hide="phone">ID</th>
-									<th>Tên danh mục</th>
-									<th data-hide="phone">Ưu tiên</th>
+									<th>Thumbnail</th>
+									<th>Tên sản phẩm</th>
+									<th data-hide="phone">Giá</th>
 									<th data-hide="phone,tablet">Hiện</th>
-									<th>Thời gian cập nhật</th>
+									<th>Người tạo</th>
+									<th>Danh mục</th>
+									<th>Thời gian tạo</th>
+									<th>Cập nhật gần đây</th>
 									<th>Thao tác</th>
 								</tr>
 							</tfoot>
@@ -106,10 +124,10 @@
 
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('.deleteCate').click(function(){
+			$('.deleteProduct').click(function(){
 				if(window.confirm("Bạn chắc chắn muốn xoá?")){
 					var id =$(this).parent().parent().find('input#id').val();
-					var url ='/admin/category/delete';
+					var url ='/admin/product/delete';
 					var target = $(this).parent().parent();
 					$.ajax({
 		                url: url,
@@ -123,14 +141,14 @@
 		                    else alert('Ajax không thành công!');
 		                 }
 		            });
-		        }
-		        else return false;
+		         }
+		         else return false;
 			});
 			$('div.alert').delay(5000).slideUp();
 			$('input.hide').change(function() {
 				var id =$(this).parent().parent().find('input#id').val();
 				var hide;
-				var url ='/admin/category/update-visible';
+				var url ='/admin/product/update-visible';
  				if(this.checked){
 				    hide=1;
 				}
