@@ -80,15 +80,19 @@ Phần mô tả đặt vào đây
 
 * [ ] Chỉnh sửa giao diện trang đăng nhập và đăng ký. (**MSSV**)
 
-* [ ] Chỉnh sửa giao diện .... (**MSSV**)
+* [ ] Xây dựng trang báo lỗi 401, 404, 500 (**MSSV**)
 
 #### Admin
 
-* [ ] Chỉnh sửa giao diện trang Admin Dashboard. (**MSSV**)
+* [x] Chỉnh sửa giao diện trang Admin Dashboard. (**MSSV**)
 
-* [ ] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) sản phẩm. (**MSSV**)
+* [x] Chỉnh sửa giao diện Admin trang thêm/sửa danh mục(**1412579**)
 
-* [ ] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) danh mục. (**MSSV**)
+* [x] Chỉnh sửa giao diện Admin trang xem/xoá danh mục(**1412579**)
+
+* [x] Chỉnh sửa giao diện Admin trang thêm/sửa sản phẩm(**1412579**)
+
+* [x] Chỉnh sửa giao diện Admin trang xem/xoá sản phẩm(**1412579**)
 
 * [ ] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) người dùng (sửa quyền,..). (**MSSV**)
 
@@ -98,15 +102,27 @@ Phần mô tả đặt vào đây
 
 * [ ] Còn rất nhiều như đặt hàng, liên hệ, email, hỗ trợ, fanpage,... (**MSSV**)
 
+* [ ] Xây dựng trang báo lỗi 401, 404, 500 (**MSSV**)
+
 ### Backend
 
 #### Admin
 
-* [ ] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) sản phẩm. (**MSSV**)
+##### Lập trình thêm sửa xoá
 
-* [ ] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) danh mục. (**MSSV**)
+* [x] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) sản phẩm. (**1412579**)
 
-* [ ] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) người dùng. (**MSSV**)
+* [x] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) danh mục. (**1412579**)
+
+* [x] Xây dựng tính năng upload ảnh thumbnail/detail của danh mục. (**1412579**)
+
+* [x] Xây dựng tính năng xoá ảnh thumbnail/detail của danh mục bằng ajax. (**1412579**)
+
+* [ ] Xây dựng tính năng Sửa quyền/Xem/Xoá/Cấm người dùng. (**MSSV**)
+
+* [ ] Xây dựng tính năng xem đơn đặt hàng, chi tiết đơn đặt hàng. (**MSSV**)
+
+* [ ] Xây dựng tính năng xử lý đơn đặt hàng, chi tiết chuyển hàng. (**MSSV**)
 
 * [ ] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) thông tin Footer. (**MSSV**)
 
@@ -118,9 +134,72 @@ Phần mô tả đặt vào đây
 
 * [ ] Đổ dữ liệu ra các view tuỳ theo chức năng (tự thêm)(**MSSV**)
 
-### Nâng cao
+* [ ] Xây dựng tính năng giỏ hàng, thêm/sửa/xoá (**MSSV**)
 
-* [ ] Sử dụng Ajax cho tất cả các tính năng trên.(**MSSV**)
+* [ ] Xây dựng tính năng đặt hàng (**MSSV**)
+
+* [ ] Xây dựng tính năng xem thông tin tình trạng đơn hàng (**MSSV**)
+
+#### Tính năng xác nhận người dùng
+
+* [ ] Xây dựng tính năng đăng nhập (**MSSV**)
+
+* [ ] Xây dựng tính năng đăng nhập bằng Facebook (**MSSV**)
+
+* [ ] Xây dựng tính năng phân loại người dùng(admin/moderator/user/...) (**MSSV**)
+
+    * [ ] Không cho phép thao tác vào trang web khi không có quyền (**MSSV**)
+
+    * [ ] Thể hiện các chức năng khác nhau trên cùng giao diện khi người dùng có quyền khác nhau (**MSSV**)
+
+    * [ ] Thể hiện lỗi khi không truy xuất được trang khi không có quyền (Lỗi 401) (**MSSV**)
+
+#### Lập trình client
+
+##### Kiểm tra dữ liệu(sử dụng jQuery Validation)
+
+* [x] Kiểm tra dữ liệu form thêm danh mục (**1412579**)
+
+* [x] Kiểm tra dữ liệu form sửa danh mục (**1412579**)
+
+* [x] Kiểm tra dữ liệu form thêm sản phẩm (**1412579**)
+
+* [x] Kiểm tra dữ liệu form sửa sản phẩm (**1412579**)
+
+* [x] Kiểm tra dữ liệu form đăng ký (**1412579**)
+
+##### Animation, sử dụng một số animation đơn giản để làm màu
+
+* [x] Animation thông báo thêm/sửa danh mục thành công (**1412579**)
+
+* [x] Animation thông báo thêm/sửa sản phẩm thành công (**1412579**)
+
+##### Thao tác DOM, lấy dữ liệu để thực hiện Ajax
+
+* [x] Thao tác DOM lấy thông tin id, class để thực hiện ajax nút switch ẩn hiện danh mục (**1412579**)
+
+* [x] Thao tác DOM lấy thông tin id để thực hiện ajax xoá danh mục (**1412579**)
+
+* [x] Thao tác DOM lấy thông tin id, class để thực hiện ajax nút switch ẩn hiện sản phẩm (**1412579**)
+
+* [x] Thao tác DOM lấy thông tin id để thực hiện ajax xoá sản phẩm (**1412579**)
+
+* [x] Thao tác DOM lấy thông tin id để xoá hình ảnh thumbnail/detail của sản phẩm sau đó append lại dữ liệu khác (**1412579**)
+
+##### Ajax
+
+* [x] AJAX xoá danh mục(**1412579**)
+
+* [x] AJAX xoá sản phẩm(**1412579**)
+
+* [x] AJAX xoá hình ảnh thumbnail của sản phẩm(**1412579**)
+
+* [x] AJAX xoá hình ảnh detail của sản phẩm(**1412579**)
+
+* [x] AJAX update ẩn/hiện danh mục bằng nút switch on/off(**1412579**)
+
+* [x] AJAX update ẩn/hiện sản phẩm bằng nút switch on/off(**1412579**)
+
 
 ## Demo
 
