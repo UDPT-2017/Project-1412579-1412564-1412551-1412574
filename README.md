@@ -142,9 +142,9 @@ Phần mô tả đặt vào đây
 
 #### Tính năng xác nhận người dùng
 
-* [ ] Xây dựng tính năng đăng nhập (**MSSV**)
+* [x] Xây dựng tính năng đăng nhập (**1412579**)
 
-* [ ] Xây dựng tính năng đăng nhập bằng Facebook (**MSSV**)
+* [x] Xây dựng tính năng đăng nhập bằng Facebook (**1412579**)
 
 * [ ] Xây dựng tính năng phân loại người dùng(admin/moderator/user/...) (**MSSV**)
 
