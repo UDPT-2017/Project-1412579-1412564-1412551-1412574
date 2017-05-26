@@ -142,17 +142,17 @@ Phần mô tả đặt vào đây
 
 #### Tính năng xác nhận người dùng
 
-* [ ] Xây dựng tính năng đăng nhập (**MSSV**)
+* [x] Xây dựng tính năng đăng nhập phần admin(**1412579**)
 
 * [ ] Xây dựng tính năng đăng nhập bằng Facebook (**MSSV**)
 
-* [ ] Xây dựng tính năng phân loại người dùng(admin/moderator/user/...) (**MSSV**)
+* [x] Xây dựng tính năng phân loại người dùng(admin/moderator/user/...) (**1412579**)
 
-    * [ ] Không cho phép thao tác vào trang web khi không có quyền (**MSSV**)
+    * [x] Không cho phép thao tác vào trang web khi không có quyền (**1412579**)
 
-    * [ ] Thể hiện các chức năng khác nhau trên cùng giao diện khi người dùng có quyền khác nhau (**MSSV**)
+    * [x] Thể hiện các chức năng khác nhau trên cùng giao diện khi người dùng có quyền khác nhau (**1412579**)
 
-    * [ ] Thể hiện lỗi khi không truy xuất được trang khi không có quyền (Lỗi 401) (**MSSV**)
+    * [x] Thể hiện lỗi khi không truy xuất được trang khi không có quyền (Lỗi 401) (**MSSV**)
 
 #### Lập trình client
 
