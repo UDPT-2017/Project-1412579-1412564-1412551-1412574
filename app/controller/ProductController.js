@@ -220,6 +220,18 @@ var ProductController = {
             });
         }
     },
+    highlight:  function(req, res) {
+        if (req.xhr || req.headers.accept.indexOf('json') > -1) {
+            Product.highlight(req.body,getTimeNow,function(err,result){
+                if(err){
+                    res.end();
+                    console.log(err);
+                }
+                console.log('Update Ajax highlight thành công!')
+                res.end('Update Ajax highlight thành công!');
+            });
+        }
+    },
     delete:  function(req, res) {
         if (req.xhr || req.headers.accept.indexOf('json') > -1) {
             Product.delete(req.body.id,function(err,result){

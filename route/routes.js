@@ -25,7 +25,7 @@ module.exports = function(app, passport,pool) {
 
 
 	//Category
-	app.get('/admin/dashboard', isAdmin,AdminController.dashboard);	
+	/*app.get('/admin/dashboard', isAdmin,AdminController.dashboard);	
 	app.get('/admin/category/add', isAdmin, isAdminAccess, CategoryController.add);
 	app.post('/admin/category/add', isAdmin, isAdminAccess, CategoryController.postadd);
 
@@ -48,10 +48,43 @@ module.exports = function(app, passport,pool) {
 	app.get('/admin/product/list', isAdmin,ProductController.list);
 
 	app.post('/admin/product/update-visible',isAdmin, ProductController.visible);
+	app.post('/admin/product/update-highlight',isAdmin, ProductController.highlight);
 
 	app.post('/admin/product/delete', isAdmin,ProductController.delete);
 	app.post('/admin/product/delete-img', isAdmin,ProductController.delimg);
-	app.post('/admin/product/delete-pImg', isAdmin,ProductController.delpImg);
+	app.post('/admin/product/delete-pImg', isAdmin,ProductController.delpImg);*/
+
+
+
+
+	app.get('/admin/dashboard', AdminController.dashboard);	
+	app.get('/admin/category/add',  isAdminAccess, CategoryController.add);
+	app.post('/admin/category/add',  isAdminAccess, CategoryController.postadd);
+
+	app.get('/admin/category/edit/:id',  isAdminAccess, CategoryController.edit);
+	app.post('/admin/category/edit/:id',  isAdminAccess, CategoryController.postedit);
+
+	app.get('/admin/category/list',  isAdminAccess, CategoryController.list);
+
+	app.post('/admin/category/update-visible',  isAdminAccess, CategoryController.visible);
+
+	app.post('/admin/category/delete',  isAdminAccess, CategoryController.delete);
+
+	//product
+	app.get('/admin/product/add', ProductController.add);
+	app.post('/admin/product/add', ProductController.postadd);
+
+	app.get('/admin/product/edit/:id', ProductController.edit);
+	app.post('/admin/product/edit/:id', ProductController.postedit);
+
+	app.get('/admin/product/list', ProductController.list);
+
+	app.post('/admin/product/update-visible', ProductController.visible);
+	app.post('/admin/product/update-highlight', ProductController.highlight);
+
+	app.post('/admin/product/delete', ProductController.delete);
+	app.post('/admin/product/delete-img', ProductController.delimg);
+	app.post('/admin/product/delete-pImg', ProductController.delpImg);
 
 
 	

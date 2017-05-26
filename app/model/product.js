@@ -37,7 +37,34 @@ var Cate = {
 		});
 	},
 	getAll: function(callback){
-		pool.query("select products.id,products.name,products.price,fullname,cates.name as catename,products.created_at,products.updated_at,products.hide,products.image from products,cates,users where products.user_id = users.id and cate_id = cates.id", function(err, result){
+		pool.query("select products.id,products.name,products.price,fullname,cates.name as catename,products.created_at,products.updated_at,products.hide,products.image,products.highlight from products,cates,users where products.user_id = users.id and cate_id = cates.id", function(err, result){
+			if (err){
+				callback(err, null);
+			}
+			else
+				callback(null, result.rows);
+		});
+	},
+	get4: function(callback){
+		pool.query("select * from products where hide = 1 LIMIT 4", function(err, result){
+			if (err){
+				callback(err, null);
+			}
+			else
+				callback(null, result.rows);
+		});
+	},
+	get4Offset: function(callback){
+		pool.query("select * from products where hide = 1 LIMIT 4 OFFSET 4", function(err, result){
+			if (err){
+				callback(err, null);
+			}
+			else
+				callback(null, result.rows);
+		});
+	},
+	getHighlight: function(callback){
+		pool.query("select * from products where highlight=1 and hide = 1 order by highlight asc, updated_at desc  LIMIT 2", function(err, result){
 			if (err){
 				callback(err, null);
 			}
@@ -102,6 +129,17 @@ var Cate = {
 	},
 	visible: function(ProductInfo,callback){
 		var query = 'update products set hide = ' + ProductInfo.hide + ' where id = ' + ProductInfo.id;
+		pool.query(query, function(err, result){
+			if (err){
+				callback(err, null);
+			}
+			else
+				callback(null, null);
+		});
+	},
+	highlight: function(ProductInfo,getTimeNow,callback){
+		var query = 'update products set highlight = ' + ProductInfo.hide + ", updated_at = '"+ getTimeNow +"' where id = " + ProductInfo.id;
+		console.log(query);
 		pool.query(query, function(err, result){
 			if (err){
 				callback(err, null);
