@@ -69,6 +69,49 @@ var WelcomeController = {
 			}); 
 		});
 	},
+	product: function(req,res){
+		console.log(req.params)
+		Product.getById(req.params.id,function(err,product){
+			if(err){
+				res.end();
+				return console.log(err);
+			}
+			Product.getRandomByCateId(product.cate_id,function(err,random){
+				console.log(random);
+				if(err){
+					res.end();
+					return console.log(err);
+				}
+				Cate.getAll(function(err,cate){
+					if(err){
+						res.end();
+						return console.log(err);
+					}
+
+					Product.getpImageById(req.params.id,function(err,image){
+						if(err){
+							res.end();
+							return console.log(err);
+						}
+						Cate.getById(product.cate_id,function(err,namecat){
+							if(err){
+								res.end();
+								return console.log(err);
+							}
+							res.render('user/single',{
+								product: product,
+								cate:cate,
+								random:random,
+								image:image,
+								namecat:namecat
+							});
+						});
+					}); 
+					
+				}); 
+			}); 
+		});
+	},
 	loadmore: function(req,res){
 		if (req.xhr || req.headers.accept.indexOf('json') > -1) {
 			Product.getByCateIdLoadMore(req.query.id,req.query.page,function(err,result){

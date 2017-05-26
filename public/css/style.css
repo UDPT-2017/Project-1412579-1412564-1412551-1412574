@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 body{
 	background:#fff;
-	font-family: 'Alegreya Sans SC', sans-serif;
+	/*font-family: 'Alegreya Sans SC', sans-serif;*/
 }
 body a{
 	transition: 0.5s all;
@@ -829,7 +829,7 @@ span.color {
 }
 span.reducedfrom {
 	text-decoration: line-through;
-	margin-right: 3%;
+	/*margin-right: 3%;*/
 	color: #555;
 	font-size: 16px;
 	font-weight: 500;
@@ -851,7 +851,7 @@ h2.quick {
 }
 p.quick_desc {
 	color: #999;
-	font-size: 13px;
+	font-size: 15px!important;
 	line-height: 1.6em;
 	margin-bottom: 2em;
 	font-family: 'Lato', sans-serif;
@@ -1012,7 +1012,7 @@ h2.quick {
 	margin: 0.5em 0 1em;
 }
 p.quick_desc {
-	font-size: 12px;
+	font-size: 15px;
 	margin-bottom: 1.5em;
 }
 ul.size {

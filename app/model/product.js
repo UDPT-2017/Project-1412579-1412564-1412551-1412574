@@ -108,6 +108,15 @@ var Cate = {
 				callback(null, result.rows[0]);
 		});
 	},
+	getRandomByCateId: function(id,callback){
+		pool.query("select * from products where cate_id=" + id + " order by random() limit 3", function(err, result){
+			if (err){
+				callback(err, null);
+			}
+			else
+				callback(null, result.rows);
+		});
+	},
 	getpImageById: function(id,callback){
 		pool.query("select * from product_images where product_id=" + id, function(err, result){
 			if (err){
