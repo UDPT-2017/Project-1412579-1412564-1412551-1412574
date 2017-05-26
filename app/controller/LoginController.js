@@ -6,7 +6,10 @@ var LoginController = {
 	formLogin : function(req, res) {
 		//console.log(req.flash('loginMessage'));
 		// render the page and pass in any flash data if it exists
-		res.render('login', { message: req.flash('loginMessage')[0] });
+		res.render('admin/login', { 
+			layout: false,
+			message: req.flash('loginMessage')[0] 
+		});
 	},
 
 	login : function(req, res, next) {

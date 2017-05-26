@@ -25,7 +25,7 @@ module.exports = function(app, passport,pool) {
 
 
 	//Category
-	app.get('/admin', AdminController.dashboard);	
+	app.get('/admin/dashboard', AdminController.dashboard);	
 	app.get('/admin/category/add', CategoryController.add);
 	app.post('/admin/category/add', CategoryController.postadd);
 
@@ -54,9 +54,13 @@ module.exports = function(app, passport,pool) {
 	app.post('/admin/product/delete-pImg', ProductController.delpImg);
 
 
+	
+
+	app.get('/admin', Logged, LoginController.formLogin);
+	app.post('/admin', LoginController.login);
+
 	// show the login form
 	app.get('/login', Logged, LoginController.formLogin);
-
 	// process the login form
 	app.post('/login', LoginController.login);
 
