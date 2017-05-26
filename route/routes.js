@@ -25,39 +25,39 @@ module.exports = function(app, passport,pool) {
 
 
 	//Category
-	app.get('/admin/dashboard', AdminController.dashboard);	
-	app.get('/admin/category/add', CategoryController.add);
-	app.post('/admin/category/add', CategoryController.postadd);
+	app.get('/admin/dashboard', isAdmin,AdminController.dashboard);	
+	app.get('/admin/category/add', isAdmin, isAdminAccess, CategoryController.add);
+	app.post('/admin/category/add', isAdmin, isAdminAccess, CategoryController.postadd);
 
-	app.get('/admin/category/edit/:id', CategoryController.edit);
-	app.post('/admin/category/edit/:id', CategoryController.postedit);
+	app.get('/admin/category/edit/:id', isAdmin, isAdminAccess, CategoryController.edit);
+	app.post('/admin/category/edit/:id', isAdmin, isAdminAccess, CategoryController.postedit);
 
-	app.get('/admin/category/list', CategoryController.list);
+	app.get('/admin/category/list', isAdmin, isAdminAccess, CategoryController.list);
 
-	app.post('/admin/category/update-visible', CategoryController.visible);
+	app.post('/admin/category/update-visible', isAdmin, isAdminAccess, CategoryController.visible);
 
-	app.post('/admin/category/delete', CategoryController.delete);
+	app.post('/admin/category/delete', isAdmin, isAdminAccess, CategoryController.delete);
 
 	//product
-	app.get('/admin/product/add', ProductController.add);
-	app.post('/admin/product/add', ProductController.postadd);
+	app.get('/admin/product/add', isAdmin,ProductController.add);
+	app.post('/admin/product/add', isAdmin,ProductController.postadd);
 
-	app.get('/admin/product/edit/:id', ProductController.edit);
-	app.post('/admin/product/edit/:id', ProductController.postedit);
+	app.get('/admin/product/edit/:id', isAdmin,ProductController.edit);
+	app.post('/admin/product/edit/:id', isAdmin,ProductController.postedit);
 
-	app.get('/admin/product/list', ProductController.list);
+	app.get('/admin/product/list', isAdmin,ProductController.list);
 
-	app.post('/admin/product/update-visible', ProductController.visible);
+	app.post('/admin/product/update-visible',isAdmin, ProductController.visible);
 
-	app.post('/admin/product/delete', ProductController.delete);
-	app.post('/admin/product/delete-img', ProductController.delimg);
-	app.post('/admin/product/delete-pImg', ProductController.delpImg);
+	app.post('/admin/product/delete', isAdmin,ProductController.delete);
+	app.post('/admin/product/delete-img', isAdmin,ProductController.delimg);
+	app.post('/admin/product/delete-pImg', isAdmin,ProductController.delpImg);
 
 
 	
 
-	app.get('/admin', Logged, LoginController.formLogin);
-	app.post('/admin', LoginController.login);
+	app.get('/admin', LoggedAdmin, LoginController.formLoginAdmin);
+	app.post('/admin', LoginController.adminlogin);
 
 	// show the login form
 	app.get('/login', Logged, LoginController.formLogin);
@@ -89,6 +89,8 @@ module.exports = function(app, passport,pool) {
 	// =====================================
 	app.get('/logout', LoginController.logout);
 
+	app.get('/admin/logout', LoginController.logoutAdmin);
+
 	app.get('*',function(req,res){
 		res.render('user/404',{
 			layout: false,
@@ -116,4 +118,34 @@ function Logged(req, res, next) {
 
 	// if they are redirect them to the home page
 	res.redirect('/');
+}
+
+function LoggedAdmin(req, res, next) {
+
+	// if user isnt authenticated in the session, carry on
+	if (!req.isAuthenticated())
+		return next();
+
+	// if they are redirect them to the home page
+	res.redirect('/admin/dashboard');
+}
+
+function isAdmin(req, res, next) {
+
+	// if user isnt authenticated in the session, carry on
+	if ( req.isAuthenticated() && req.user.role > 0)
+		return next();
+
+	// if they are redirect them to the home page
+	res.redirect('/admin');
+}
+
+function isAdminAccess(req, res, next) {
+
+	// if user isnt authenticated in the session, carry on
+	if (req.user.role == 1)
+		return next();
+
+	// if they are redirect them to the home page
+	res.end("401 - Unauthorized: Access is denied due to invalid credentials");
 }

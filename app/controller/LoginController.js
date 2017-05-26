@@ -12,25 +12,55 @@ var LoginController = {
 		});
 	},
 
+	formLoginAdmin : function(req, res) {
+		//console.log(req.flash('loginMessage'));
+		// render the page and pass in any flash data if it exists
+		res.render('admin/login', { 
+			layout: false,
+			message: req.flash('loginMessage')[0] 
+		});
+	},
+
 	login : function(req, res, next) {
-	passport.authenticate('local-login', function(err, user, info) {
-		if (err) { return next(err); }
-		// Redirect if it fails
-		if (!user) { return res.redirect('/login'); }
-		req.logIn(user, function(err) {
+		passport.authenticate('local-login', function(err, user, info) {
 			if (err) { return next(err); }
-			// Redirect if it succeeds
-				return res.redirect('/mailbox');
-			});
-		})(req, res, next),
-		function(req, res) {
-            //console.log("hello");
-            //remember me
-            if (req.body.remember) {
-              req.session.cookie.maxAge = 1000 * 60 * 3;
-            } else {
-              req.session.cookie.expires = false;
-            }
+			// Redirect if it fails
+			if (!user) { return res.redirect('/login'); }
+			req.logIn(user, function(err) {
+				if (err) { return next(err); }
+				// Redirect if it succeeds
+					return res.redirect('/');
+				});
+			})(req, res, next),
+			function(req, res) {
+	            //console.log("hello");
+	            //remember me
+	            if (req.body.remember) {
+	              req.session.cookie.maxAge = 1000 * 60 * 3;
+	            } else {
+	              req.session.cookie.expires = false;
+	            }
+        }
+	},
+	adminlogin : function(req, res, next) {
+		passport.authenticate('local-login-admin', function(err, user, info) {
+			if (err) { return next(err); }
+			// Redirect if it fails
+			if (!user) { return res.redirect('/admin'); }
+			req.logIn(user, function(err) {
+				if (err) { return next(err); }
+				// Redirect if it succeeds
+					return res.redirect('/admin/dashboard');
+				});
+			})(req, res, next),
+			function(req, res) {
+	            //console.log("hello");
+	            //remember me
+	            if (req.body.remember) {
+	              req.session.cookie.maxAge = 1000 * 60 * 3;
+	            } else {
+	              req.session.cookie.expires = false;
+	            }
         }
 	},
 
@@ -46,8 +76,11 @@ var LoginController = {
 	logout: function(req, res) {
 		req.logout();
 		res.redirect('/');
+	},
+	logoutAdmin: function(req, res) {
+		req.logout();
+		res.redirect('/admin');
 	}
-	
 }
 
 module.exports = LoginController;
