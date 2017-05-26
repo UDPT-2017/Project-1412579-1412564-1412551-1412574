@@ -22,8 +22,8 @@ module.exports = function(app, passport,pool) {
 
 	//Home
 	app.get('/', WelcomeController.index);
-
-
+	app.get('/danh-muc/:id-:alias', WelcomeController.cate);
+	app.get('/loadmore', WelcomeController.loadmore);
 	//Category
 	/*app.get('/admin/dashboard', isAdmin,AdminController.dashboard);	
 	app.get('/admin/category/add', isAdmin, isAdminAccess, CategoryController.add);

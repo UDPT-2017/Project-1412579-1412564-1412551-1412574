@@ -45,6 +45,33 @@ var Cate = {
 				callback(null, result.rows);
 		});
 	},
+	getByCateId: function(cate_id,callback){
+		pool.query("select * from products where cate_id = " +cate_id + " limit 3", function(err, result){
+			if (err){
+				callback(err, null);
+			}
+			else
+				callback(null, result.rows);
+		});
+	},
+	getByCateIdOffset: function(cate_id,callback){
+		pool.query("select * from products where cate_id = " +cate_id + " limit 3 offset 3", function(err, result){
+			if (err){
+				callback(err, null);
+			}
+			else
+				callback(null, result.rows);
+		});
+	},
+	getByCateIdLoadMore: function(cate_id,page,callback){
+		pool.query("select * from products where cate_id = " +cate_id + " limit 3 offset " + page*3, function(err, result){
+			if (err){
+				callback(err, null);
+			}
+			else
+				callback(null, result.rows);
+		});
+	},
 	get4: function(callback){
 		pool.query("select * from products where hide = 1 LIMIT 4", function(err, result){
 			if (err){
