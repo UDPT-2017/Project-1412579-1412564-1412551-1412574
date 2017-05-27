@@ -96,8 +96,8 @@ var UserController =  {
             email: req.body.email,
             fullname: req.body.fullname,
             phone: req.body.phone,
-            password: req.body.password,
-            password2: req.body.password2,
+            password: bcrypt.hashSync(req.body.password),
+            password2: bcrypt.hashSync(req.body.password2),
             role: req.body.role,
         };
 
