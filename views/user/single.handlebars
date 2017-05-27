@@ -44,7 +44,11 @@ $(window).load(function() {
 						<p class="quick_desc"> {{{product.description}}}</p>
 					<div class="clearfix"> </div>
 				<div class="single-but item_add">
-					<input class="item_add_cart" data-id="{{ product.id }}" data-price="{{ product.price }}"  data-name="{{ product.name }}" type="submit" value="add to cart"/>
+				{{#if user}}
+					<input class="item_add_cart" data-id="{{ product.id }}" data-price="{{ product.price }}"  data-name="{{ product.name }}" type="submit" value="ĐẶT HÀNG"/>
+				{{else}}
+					<input class="item_add_cart"  onclick="window.location='/login';" type="submit" value="ĐẶT HÀNG"/>
+				{{/if}}
 				</div>
 			</div>
 		</div>

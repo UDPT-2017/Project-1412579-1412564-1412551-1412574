@@ -56,7 +56,7 @@ function orders(user) {
         });
       },
       getAllItems: function() {
-        var sql = 'select * from order_details where order_id=$1::INT';
+        var sql = 'select * from order_details,products where order_id=$1::INT and products.id = product_id';
         return new Promise(function(resolve, reject) {
           pool.query(sql, [order.id], function(errors, result) {
             if(errors) {

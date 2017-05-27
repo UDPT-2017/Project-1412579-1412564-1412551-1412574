@@ -22,12 +22,16 @@ var upload = multer({ storage : storage });
 module.exports = function(app, passport,pool) {
 
 	//Home
-	app.get('/', isLoggedIn, WelcomeController.index);
-	app.get('/danh-muc/:id-:alias', isLoggedIn, WelcomeController.cate);
-	app.get('/san-pham/:id-:alias', isLoggedIn, WelcomeController.product);
-	app.get('/loadmore', isLoggedIn, WelcomeController.loadmore);
+	app.get('/',  WelcomeController.index);
+	app.get('/danh-muc/:id-:alias',  WelcomeController.cate);
+	app.get('/san-pham/:id-:alias',  WelcomeController.product);
+	app.get('/loadmore',  WelcomeController.loadmore);
 	//Category
-	/*app.get('/admin/dashboard', isAdmin,AdminController.dashboard);
+
+	/*app.get('/admin/dashboard', isAdmin,AdminController.dashboard);	
+
+	app.get('/admin/dashboard', isAdmin,AdminController.dashboard);
+
 	app.get('/admin/category/add', isAdmin, isAdminAccess, CategoryController.add);
 	app.post('/admin/category/add', isAdmin, isAdminAccess, CategoryController.postadd);
 
@@ -54,12 +58,16 @@ module.exports = function(app, passport,pool) {
 
 	app.post('/admin/product/delete', isAdmin,ProductController.delete);
 	app.post('/admin/product/delete-img', isAdmin,ProductController.delimg);
-	app.post('/admin/product/delete-pImg', isAdmin,ProductController.delpImg);*/
+	app.post('/admin/product/delete-pImg', isAdmin,ProductController.delpImg);
+	*/
 
 
 
+
+	app.get('/admin/dashboard', AdminController.dashboard);	
 
 	app.get('/admin/dashboard', AdminController.dashboard);
+
 	app.get('/admin/category/add',  isAdminAccess, CategoryController.add);
 	app.post('/admin/category/add',  isAdminAccess, CategoryController.postadd);
 
@@ -88,7 +96,13 @@ module.exports = function(app, passport,pool) {
 	app.post('/admin/product/delete-img', ProductController.delimg);
 	app.post('/admin/product/delete-pImg', ProductController.delpImg);
 
-	app.use('/cart', CartController);
+
+
+	
+
+
+	app.use('/cart', isLoggedIn, CartController);
+
 
 	app.get('/admin', LoggedAdmin, LoginController.formLoginAdmin);
 	app.post('/admin', LoginController.adminlogin);
