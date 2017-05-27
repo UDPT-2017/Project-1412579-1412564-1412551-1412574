@@ -520,6 +520,22 @@ ul.callbacks_tabs.callbacks2_tabs {
 	padding: 10px 10px;
 	font-family: 'Lato', sans-serif;
 }
+.address input[type="email"] {
+	border: 1px solid #242424;
+	outline: none;
+	width: 100%;
+	font-size: 14px;
+	padding: 10px 10px;
+	font-family: 'Lato', sans-serif;
+}
+.address input[type="password"] {
+	border: 1px solid #242424;
+	outline: none;
+	width: 100%;
+	font-size: 14px;
+	padding: 10px 10px;
+	font-family: 'Lato', sans-serif;
+}
 .address{
 	margin-top:4%;
 }

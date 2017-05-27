@@ -16,55 +16,66 @@
 		<div class="container"> 
 			<div class="account-bottom">
 				<div class="col-md-6 account-left">
-					<form>
+					<form method="post" action="/sign-up">
 					<div class="account-top heading">
 						<h3>NEW CUSTOMERS</h3>
 					</div>
 					<div class="address">
-						<span>First Name</span>
-						<input type="text">
-					</div>
-					<div class="address">
-						<span>Last Name</span>
-						<input type="text">
-					</div>
-					<div class="address">
-						<span>Email Address</span>
-						<input type="text">
+						<span>Email</span>
+						<input type="email" name="email" required="required" />
 					</div>
 					<div class="address">
 						<span>Password</span>
-						<input type="text">
+						<input type="password" name="password" required="required" />
 					</div>
 					<div class="address">
-						<span>Reenter Password</span>
-						<input type="text">
+						<span>Full name</span>
+						<input type="text" name="fulname"  required="required" />
 					</div>
-					<div class="address new">
-						<input type="submit" value="submit">
+					<div class="address">
+						<span>Phone</span>
+						<input type="text" name="phone" required="required" />
+					</div>
+					<div class="address">
+						<span>Password 2</span>
+						<input type="password" name="password2" required="required" />
+					</div>
+					<div class="address">
+						<input type="submit" value="Sign-up">
 					</div>
 					</form>
+					<br/>
+					{{#if messagesig}}
+				        <div class="alert alert-danger">{{messagesig}}</div>
+				    {{/if}}
 				</div>
+
 				<div class="col-md-6 account-left">
-					<form>
+					<form method="post" action="/login">
 					<div class="account-top heading">
 						<h3>REGISTERED CUSTOMERS</h3>
 					</div>
 					<div class="address">
 						<span>Email Address</span>
-						<input type="text">
+						<input type="email" name="email" required="required" />
 					</div>
 					<div class="address">
 						<span>Password</span>
-						<input type="text">
+						<input type="password" name="password" required="required" />
 					</div>
-					<div class="address">
-						<a class="forgot" href="#">Forgot Your Password?</a>
+					<div class="address new">
+						<a class="forgot" href="/forgot">Forgot Your Password?</a>
 						<input type="submit" value="Login">
 					</div>
+					</form>
+					<br/>
+					{{#if messagelog}}
+				        <div class="alert alert-danger">{{messagelog}}</div>
+				    {{/if}}
 				</div>
-				</form>
 				<div class="clearfix"> </div>
+				
+				
 			</div>
 		</div>
 	</div>

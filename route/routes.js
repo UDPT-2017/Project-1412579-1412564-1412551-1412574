@@ -5,7 +5,11 @@ var LoginController = require('../app/controller/LoginController.js');
 var AdminController = require('../app/controller/AdminController');
 var CategoryController = require('../app/controller/CategoryController');
 var ProductController = require('../app/controller/ProductController');
+
+var UserController = require('../app/controller/UserController');
+
 var CartController = require('../app/controller/CartController');
+
 
 var multer  =   require('multer');
 var storage =   multer.diskStorage({
@@ -64,6 +68,11 @@ module.exports = function(app, passport,pool) {
 
 
 
+
+	app.get('/admin/dashboard', isAdmin,AdminController.dashboard);	
+	app.get('/admin/category/add',  isAdmin, CategoryController.add);
+	app.post('/admin/category/add',  isAdmin, CategoryController.postadd);
+
 	app.get('/admin/dashboard', AdminController.dashboard);	
 
 	app.get('/admin/dashboard', AdminController.dashboard);
@@ -71,34 +80,45 @@ module.exports = function(app, passport,pool) {
 	app.get('/admin/category/add',  isAdminAccess, CategoryController.add);
 	app.post('/admin/category/add',  isAdminAccess, CategoryController.postadd);
 
-	app.get('/admin/category/edit/:id',  isAdminAccess, CategoryController.edit);
-	app.post('/admin/category/edit/:id',  isAdminAccess, CategoryController.postedit);
 
-	app.get('/admin/category/list',  isAdminAccess, CategoryController.list);
+	app.get('/admin/category/edit/:id',  isAdmin, CategoryController.edit);
+	app.post('/admin/category/edit/:id',  isAdmin, CategoryController.postedit);
 
-	app.post('/admin/category/update-visible',  isAdminAccess, CategoryController.visible);
+	app.get('/admin/category/list',  isAdmin, CategoryController.list);
 
-	app.post('/admin/category/delete',  isAdminAccess, CategoryController.delete);
+	app.post('/admin/category/update-visible',  isAdmin, CategoryController.visible);
+
+	app.post('/admin/category/delete',  isAdmin, CategoryController.delete);
 
 	//product
-	app.get('/admin/product/add', ProductController.add);
-	app.post('/admin/product/add', ProductController.postadd);
+	app.get('/admin/product/add', isAdmin, ProductController.add);
+	app.post('/admin/product/add', isAdmin, ProductController.postadd);
 
-	app.get('/admin/product/edit/:id', ProductController.edit);
-	app.post('/admin/product/edit/:id', ProductController.postedit);
+	app.get('/admin/product/edit/:id', isAdmin, ProductController.edit);
+	app.post('/admin/product/edit/:id', isAdmin, ProductController.postedit);
 
-	app.get('/admin/product/list', ProductController.list);
+	app.get('/admin/product/list', isAdmin, ProductController.list);
 
-	app.post('/admin/product/update-visible', ProductController.visible);
-	app.post('/admin/product/update-highlight', ProductController.highlight);
+	app.post('/admin/product/update-visible', isAdmin, ProductController.visible);
+	app.post('/admin/product/update-highlight', isAdmin, ProductController.highlight);
 
-	app.post('/admin/product/delete', ProductController.delete);
-	app.post('/admin/product/delete-img', ProductController.delimg);
-	app.post('/admin/product/delete-pImg', ProductController.delpImg);
+	app.post('/admin/product/delete', isAdmin, ProductController.delete);
+	app.post('/admin/product/delete-img', isAdmin, ProductController.delimg);
+	app.post('/admin/product/delete-pImg', isAdmin, ProductController.delpImg);
 
+	app.get('/admin/user/list',  isAdmin, UserController.list);
+	app.get('/admin/user/edit/:id',  isAdmin, UserController.edit);
+	app.post('/admin/user/delete',  isAdmin, UserController.delete);
+	app.post('/admin/user/edit',  isAdmin, UserController.postedit);
+	app.get('/admin/user/add',  isAdmin, UserController.add);
+	app.post('/admin/user/add',  isAdmin, UserController.postadd);
 
 
 	
+
+
+	app.get('/admin', notAdmin, LoginController.formLoginAdmin);
+	app.post('/admin', notAdmin, LoginController.adminlogin);
 
 
 	app.use('/cart', isLoggedIn, CartController);
@@ -107,21 +127,31 @@ module.exports = function(app, passport,pool) {
 	app.get('/admin', LoggedAdmin, LoginController.formLoginAdmin);
 	app.post('/admin', LoginController.adminlogin);
 
+
 	// show the login form
-	app.get('/login', Logged, LoginController.formLogin);
+	//app.get('/login', Logged, LoginController.formLogin);
 	// process the login form
 	app.post('/login', LoginController.login);
 
 
-	app.get('/sign-up', LoginController.formSignup);
+	//view login and signup
+	app.get('/account', LoginController.formAccount);
+
+	//view forgot password
+	app.get('/forgot', LoginController.formForgot);
 
 	// process the signup form
 	app.post('/sign-up', passport.authenticate('local-signup', {
-		successRedirect : '/mailbox', // redirect to the secure profile section
+		successRedirect : '/', // redirect to the secure profile section
 		failureRedirect : '/sign-up', // redirect back to the signup page if there is an error
 		failureFlash : true // allow flash messages
 	}));
 
+	app.post('/changepass', passport.authenticate('local-changepass', {
+		successRedirect : '/', // redirect to the secure profile section
+		failureRedirect : '/forgot', // redirect back to the signup page if there is an error
+		failureFlash : true // allow flash messages
+	}));
 
 	app.get('/auth/facebook', passport.authenticate('facebook', { scope : ['email','user_friends'] }));
 
@@ -144,6 +174,13 @@ module.exports = function(app, passport,pool) {
 			layout: false,
 		});
 	})
+
+	app.use(function(req,res,next){
+		res.locals = ({
+			user: req.user
+		});
+		return next();
+	});
 
 };
 
@@ -168,13 +205,13 @@ function Logged(req, res, next) {
 	res.redirect('/');
 }
 
-function LoggedAdmin(req, res, next) {
+function notAdmin(req, res, next) {
 
 	// if user isnt authenticated in the session, carry on
 	if (!req.isAuthenticated())
 		return next();
-
-	// if they are redirect them to the home page
+	else if(req.isAuthenticated()  && req.user.role == 0)
+		return next();
 	res.redirect('/admin/dashboard');
 }
 
