@@ -11,48 +11,52 @@
 		</div>
 	</div>
 	<!--end-breadcrumbs-->
-	<!--start-product--> 
+	<!--start-product-->
 	<div class="product">
 		<div class="container">
 			<div class="product-main">
 				<div class="col-md-9 p-left">
-				
-					<div class="product-one">
-					{{#each product}}
-						<div class="col-md-4 product-left single-left"> 
-							<div class="p-one simpleCart_shelfItem">
-								<a href="/san-pham/{{id}}-{{alias}}">
-									<img src="/product/{{image}}" alt="" />
-									<div class="mask mask1">
-										<span>Xem ngay</span>
-									</div>
-								</a>
-								<h4>{{name}}</h4>
-								<p><a class="item_add" href="#"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
-							</div>
-						</div>
-					{{/each}}
 
-						<div class="clearfix"> </div>
+			<div class="product-one">
+			{{#each product}}
+				<div class="col-md-4 product-left single-left">
+					<div class="p-one simpleCart_shelfItem">
+						<a href="/san-pham/{{id}}-{{alias}}">
+								<img src="/product/{{image}}" alt="" />
+								<div class="mask mask1">
+									<span>Xem ngay</span>
+								</div>
+							</a>
+						<h4>{{name}}</h4>
+						{{#if ../user}}
+						<p><a class="item_add_cart" href="#" data-id="{{ id }}" data-price="{{ price }}"  data-name="{{ name }}"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
+						{{else}}
+						<p><a href="/login"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
+						{{/if}}
 					</div>
-			
-					<div class="product-one">
-					{{#each productOffset}}
-						<div class="col-md-4 product-left single-left"> 
-							<div class="p-one simpleCart_shelfItem">
-								<a href="/san-pham/{{id}}-{{alias}}">
-										<img src="/product/{{image}}" alt="" />
-										<div class="mask mask1">
-											<span>Xem ngay</span>
-										</div>
-									</a>
-								<h4>{{name}}</h4>
-								<p><a class="item_add" href="#"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
-							</div>
-						</div>
-					{{/each}}
+				</div>
+			{{/each}}
 
-					<div class="clearfix"> </div>
+			<div class="clearfix"> </div>
+			</div>
+
+			<div class="product-one">
+			{{#each productOffset}}
+				<div class="col-md-4 product-left single-left">
+					<div class="p-one simpleCart_shelfItem">
+						<a href="/san-pham/{{id}}-{{alias}}">
+								<img src="/product/{{image}}" alt="" />
+								<div class="mask mask1">
+									<span>Xem ngay</span>
+								</div>
+							</a>
+						<h4>{{name}}</h4>
+						<p><a class="item_add" href="javascript:void(0);"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
+          </div>
+				</div>
+			{{/each}}
+
+			<div class="clearfix"> </div>
 					</div>
 
 					<div class="col-md-12" id="before" style="margin-top:20px;border: 1px solid;text-align:center">
@@ -70,4 +74,4 @@
 
 	</div>
 	<!--end-product-->
-	
+

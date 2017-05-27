@@ -7,12 +7,12 @@
 <script src="/assets/js/jquery-2.2.3.min.js"></script>
 <!-- Custom Theme files -->
 <!--theme-style-->
-<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="icon" href="/images/favicon.png">
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Free Style Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Free Style Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--fonts-->
@@ -23,17 +23,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript" src="/js/easing.js"></script>
 <script type="text/javascript">
 					jQuery(document).ready(function($) {
-						$(".scroll").click(function(event){		
+						$(".scroll").click(function(event){
 							event.preventDefault();
 							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 						});
 					});
-				</script>	
+				</script>
 <!-- start menu -->
 <script src="/js/simpleCart.min.js"> </script>
 <link href="/css/memenu.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="/js/memenu.js"></script>
-<script>$(document).ready(function(){$(".memenu").memenu();});</script>		
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#loadmore').click(function(){
@@ -56,12 +56,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		                    	//console.log(index);
 		                    	var parts = val.price.toString().split(".");
 							    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-							    
+
 		                        append = append + '<div class="col-md-4 product-left single-left"><div class="p-one simpleCart_shelfItem"><a href="/san-pham/'+ val.id +'-'+ val.alias +'"><img src="/product/'+ val.image +'" alt="" /><div class="mask mask1"><span>Xem ngay</span></div></a><h4>'+ val.name +'</h4><p><a class="item_add" href="#"><i></i> <span class=" item_price">'+ parts.join(".") +'</span></a></p></div></div>';
 		                    });
 		                    var append =  append + '<div class="clearfix"> </div></div>';
 		                    //alert(append);
-		                    
+
 	                    	$('#before').before(append);
 	                    	$('#page').val(parseInt(page)+1);
 	                    }
@@ -70,15 +70,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	             }
 	        });
         });
-	});	
+	});
 </script>
+<script type="text/javascript" src="/js/cart.js"></script>
 </head>
-<body> 
-	
+<body>
+
 	{{>top-header}}
 
 	{{>bottom-header}}
-	
+
 	{{>banner}}
 
 	
