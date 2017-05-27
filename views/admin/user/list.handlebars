@@ -55,7 +55,10 @@
 									<td class="center">
 										{{phone}}
 									</td>
-									<td>{{role}}</td>
+									<td>{{#ifCond role '==' 0}} Khách hàng {{/ifCond}}
+									{{#ifCond role '==' 1}} Admin {{/ifCond}}
+									{{#ifCond role '==' 2}} Moderater {{/ifCond}}
+									</td>
 									<td class="center">
 										<a href="/admin/user/edit/{{id}}" class="btn btn-primary btn-sm btn-icon icon-left">
 											<i class="entypo-pencil"></i>

@@ -1,4 +1,5 @@
 //app/controller/Login.js
+var User = require('../model/user.js');
 var passport = require('passport');
 const pool = require('../model/pg');
 
@@ -90,9 +91,47 @@ var LoginController = {
 	},
 	formForgot: function(req, res) {
 		res.render('user/forgotpass',{ message: req.flash('forgotMessage')[0] });
-	}
+	},
 
+	formEditAccount: function(req, res) {
+		res.render('user/editaccount',{ message: req.flash('editMessage')[0] });
+	},
+	postEditAccount: function(req, res) {
+		var userInfo = {
+            id: req.body.id,
+            email: req.body.email,
+            fullname: req.body.fullname,
+            phone: req.body.phone,
+            password: req.body.newpassword,
+            password2: req.body.newpassword2,
+            role: req.body.role,
+        };
+        if (userInfo.password == '')
+        {
+        	userInfo.password = req.body.password;
+        	console.log("You didn't change password");
+        	
+        }
+        else
+        {
+        	userInfo.password = bcrypt.hashSync(req.body.newpassword, null, null);
 
+        }
+        if (userInfo.password2 == '')
+        	userInfo.password2 = req.body.password2;
+        else
+        	userInfo.password2 = bcrypt.hashSync(req.body.newpassword2, null, null);
+        	
+        console.log(userInfo);
+        User.updateById(userInfo,function(err,result){
+            if(err){
+                res.end();
+                console.log(err);
+            }
+            req.flash('messageUser', 'Đã Update thông tin tài khoản thành công!');
+            res.redirect('/logout');
+        });
+	},
 }
 
 module.exports = LoginController;
