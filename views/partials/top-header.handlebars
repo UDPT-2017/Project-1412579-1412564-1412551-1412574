@@ -1,5 +1,5 @@
 <!--top-header-->
-	<div class="top-header">
+<div class="top-header">
 	<div class="container">
 		<div class="top-header-main">
 			<div class="col-md-4 col-sm-5 col-xs-5 top-header-left" >
@@ -10,22 +10,27 @@
 			</div>
 			<div class="col-md-4 col-sm-12 col-xs-12 top-header-middle">
 				<a href="index.html" ><img class="img-responsive mid" src="/images/logo-4.png" alt="" /></a>
-			</div> 
+			</div>
 			<div class="col-md-4 col-sm-12 col-xs-12 top-header-right ">
 				<div class="col-md-4 col-xs-4 col-sm-4">
 					<div class="cart box_signin">
-						<a href="index.html"><h3>Join/Sign in</h3></a>		
+						{{#if currentUser }}
+							<a href="#"><h3>{{ currentUser.fullname }}</h3></a>
+						{{else}}
+							<a href="index.html"><h3>Join/Sign in</h3></a>
+						{{/if}}
 					</div>
 				</div>
 				<div class="col-md-6 col-xs-8 col-sm-8">
 					<div class="cart box_1">
-							<a href="checkout.html">
+						<a href="/cart/checkout">
 							<h3> <div class="total">
-								<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
+								<span id="tota_cart"></span> <span id="total_items_cart">{{ countCart }}</span>&nbsp;items</div>
 								<img src="images/cart-1.png" alt="" />
-							</a>
-							<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-							<div class="clearfix"> </div>
+							</h3>
+						</a>
+						<p><a id="empty_cart">Empty Cart</a></p>
+						<div class="clearfix"> </div>
 					</div>
 				</div>
 			</div>
