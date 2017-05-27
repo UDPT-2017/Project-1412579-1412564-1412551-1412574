@@ -1,6 +1,7 @@
 //app/controller/WelcomeController.js
 var Cate = require('../model/category.js');
-var Product = require('../model/Product.js');
+var Product = require('../model/product.js');
+
 var WelcomeController = {
 	index: function(req, res) {
 		Cate.getAll(function(err,result){
@@ -23,13 +24,27 @@ var WelcomeController = {
 							res.end();
 							return console.log(err);
 						}
-						console.log(result);
-						res.render('user/index',{
-							cate: result,
-							getHighlight: getHighlight,
-							get4: get4,
-							get4Offset: get4Offset,
-						}); 
+						var Order = require('../model/order.js')(req.user);
+						var gOrder;
+						Order.getCart()
+						.then(function(order) {
+							gOrder = order;
+							return order.countItems();
+						})
+						.then(function(count) {
+							res.render('user/index',{
+								cate: result,
+								getHighlight: getHighlight,
+								get4: get4,
+								get4Offset: get4Offset,
+								currentUser: req.user,
+								countCart: count,
+								cart: gOrder
+							});
+						})
+						.catch(function(errors) {
+							console.log(errors);
+						});
 					});
 				});
 			});
@@ -57,16 +72,31 @@ var WelcomeController = {
 							res.end();
 							return console.log(err);
 						}
-						res.render('user/products',{
-							product: product,
-							cate:cate,
-							productOffset,productOffset,
-							namecat,namecat
 
+						var Order = require('../model/order.js')(req.user);
+						var gOrder;
+						Order.getCart()
+						.then(function(order) {
+							gOrder = order;
+							return order.countItems();
+						})
+						.then(function(count) {
+							res.render('user/products',{
+								product: product,
+								cate:cate,
+								productOffse: productOffset,
+								namecat: namecat,
+								currentUser: req.user,
+								countCart: count,
+								cart: gOrder
+							});
+						})
+						.catch(function(errors) {
+							console.log(errors);
 						});
-					}); 
-				}); 
-			}); 
+					});
+				});
+			});
 		});
 	},
 	product: function(req,res){
@@ -98,18 +128,33 @@ var WelcomeController = {
 								res.end();
 								return console.log(err);
 							}
-							res.render('user/single',{
-								product: product,
-								cate:cate,
-								random:random,
-								image:image,
-								namecat:namecat
+							var Order = require('../model/order.js')(req.user);
+							var gOrder;
+							Order.getCart()
+							.then(function(order) {
+								gOrder = order;
+								return order.countItems();
+							})
+							.then(function(count) {
+								res.render('user/single',{
+									product: product,
+									cate:cate,
+									random:random,
+									image:image,
+									namecat:namecat,
+									currentUser: req.user,
+									countCart: count,
+									cart: gOrder
+								});
+							})
+							.catch(function(errors) {
+								console.log(errors);
 							});
 						});
-					}); 
-					
-				}); 
-			}); 
+					});
+
+				});
+			});
 		});
 	},
 	loadmore: function(req,res){
@@ -123,7 +168,7 @@ var WelcomeController = {
 				console.log('ajax loadmore thành công!');
 				res.end(JSON.stringify(result));
 			});
-			
+
 		}
 	}
 }

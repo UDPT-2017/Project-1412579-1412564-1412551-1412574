@@ -8,7 +8,7 @@
 			<div class="single-main">
 				<div class="col-md-9 single-main-left">
 				<div class="sngl-top">
-					<div class="col-md-5 single-top-left">	
+					<div class="col-md-5 single-top-left">
 						<div class="flexslider">
 							<ul class="slides">
 							{{#each image}}
@@ -31,7 +31,7 @@ $(window).load(function() {
   });
 });
 </script>
-				</div>	
+				</div>
 				<div class="col-md-7 single-top-right" >
 					<div class="details-left-info simpleCart_shelfItem">
 						<h1>{{product.name}}</h1>
@@ -44,7 +44,7 @@ $(window).load(function() {
 						<p class="quick_desc"> {{{product.description}}}</p>
 					<div class="clearfix"> </div>
 				<div class="single-but item_add">
-					<input type="submit" value="add to cart"/>
+					<input class="item_add_cart" data-id="{{ product.id }}" data-price="{{ product.price }}"  data-name="{{ product.name }}" type="submit" value="add to cart"/>
 				</div>
 			</div>
 		</div>
@@ -57,7 +57,7 @@ $(window).load(function() {
 						<div class="product-one">
 
 						{{#each random}}
-							<div class="col-md-4 product-left single-left"> 
+							<div class="col-md-4 product-left single-left">
 								<div class="p-one simpleCart_shelfItem">
 									<a href="/san-pham/{{id}}-{{alias}}.html">
 								<img src="/product/{{image}}" alt="" />
@@ -65,7 +65,7 @@ $(window).load(function() {
 									<span>Xem ngay</span>
 								</div></a>
 									<h4>{{name}}</h4>
-									<p><a class="item_add" href="#"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>		
+									<p><a class="item_add" href="#"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
 								</div>
 							</div>
 						{{/each}}
@@ -79,4 +79,4 @@ $(window).load(function() {
 		</div>
 	</div>
 	<!--end-single-->
-	
+
