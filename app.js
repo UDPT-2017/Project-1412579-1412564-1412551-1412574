@@ -51,6 +51,14 @@ var hbs = exphbs.create({ defaultLayout: 'main-user' ,
 		        default:
 		            return options.inverse(this);
 		    }
+		},
+		fmNum: function(value) {
+		    var parts = value.toString().split(".");
+		    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+		    return parts.join(".");
+		},
+		tenPercent: function(value) {
+		    return parseInt(value) + parseInt(value*0.1);
 		}
 	},
 });

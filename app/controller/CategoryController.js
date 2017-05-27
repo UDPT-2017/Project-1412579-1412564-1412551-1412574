@@ -6,7 +6,6 @@ var slug = require('slug');
 var moment = require('moment');
 var momentNow = moment();
 var getTimeNow = momentNow.format('YYYY-MM-DD HH:mm:ss');
-
 var CategoryController = {
 	add: function(req, res) {
 		res.render('admin/category/add',{

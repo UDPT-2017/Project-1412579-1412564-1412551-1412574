@@ -43,6 +43,7 @@
 									<th>Tên sản phẩm</th>
 									<th data-hide="phone">Giá</th>
 									<th data-hide="phone,tablet">Hiện</th>
+									<th data-hide="phone,tablet">Nổi bật</th>
 									<th>Người tạo</th>
 									<th>Danh mục</th>
 									<th>Thời gian tạo</th>
@@ -62,7 +63,7 @@
 										{{/if}}
 									</td>
 									<td>{{name}}</td>
-									<td>{{price}}</td>
+									<td>{{#fmNum price}}{{/fmNum}}</td>
 									<td class="center">
 										{{#if hide}}
 											<div class="make-switch" data-on="primary" data-off="info">
@@ -73,6 +74,19 @@
 											<div class="make-switch" data-on="primary" data-off="info">
 												<input type="hidden" id="id" value="{{id}}">
 												<input type="checkbox" class="hide" name="checkbox">
+											</div>
+										{{/if}}
+									</td>
+									<td class="center">
+										{{#if highlight}}
+											<div class="make-switch" data-on="primary" data-off="info">
+												<input type="hidden" id="id" value="{{id}}">
+												<input type="checkbox" class="highlight" name="checkbox" checked>
+											</div>
+										{{else}}
+											<div class="make-switch" data-on="primary" data-off="info">
+												<input type="hidden" id="id" value="{{id}}">
+												<input type="checkbox" class="highlight" name="checkbox">
 											</div>
 										{{/if}}
 									</td>
@@ -101,6 +115,7 @@
 									<th>Tên sản phẩm</th>
 									<th data-hide="phone">Giá</th>
 									<th data-hide="phone,tablet">Hiện</th>
+									<th data-hide="phone,tablet">Nổi bật</th>
 									<th>Người tạo</th>
 									<th>Danh mục</th>
 									<th>Thời gian tạo</th>
@@ -149,6 +164,29 @@
 				var id =$(this).parent().parent().find('input#id').val();
 				var hide;
 				var url ='/admin/product/update-visible';
+ 				if(this.checked){
+				    hide=1;
+				}
+				else{
+				    hide=0;
+				}
+				$.ajax({
+	                url: url,
+	                type: 'POST',
+	                cache: false,
+	                data:{id:id,hide:hide},
+	                success: function (data){
+	                    if(data){
+	                        console.log(data);
+	                    }
+	                    else alert('Ajax không thành công!');
+	                 }
+	            });
+			});
+			$('input.highlight').change(function() {
+				var id =$(this).parent().parent().find('input#id').val();
+				var hide;
+				var url ='/admin/product/update-highlight';
  				if(this.checked){
 				    hide=1;
 				}

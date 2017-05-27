@@ -19,7 +19,7 @@ var storage =   multer.diskStorage({
 });
 
 
-var upload = multer({ storage : storage }).array('imgdetail',6);
+var upload = multer({ storage : storage }).array('imgdetail',5);
 
 var ProductController = {
 	add: function(req, res) {
@@ -116,7 +116,7 @@ var ProductController = {
                             cate += '<option value="'+ list[i].id +'">'+ list[i].name +'</option>';
                     }
                     var select='';
-                    for(var index = pimage.length; index<5;index++){
+                    for(var index = pimage.length; index<4;index++){
                         select+='<div class="form-group"><label class="col-sm-3 control-label">Ảnh detail</label><div class="col-sm-5"><div class="fileinput fileinput-new" data-provides="fileinput"><span class="btn btn-info btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" accept="image/*" name="imgdetail"></span><span class="fileinput-filename"></span><a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a></div></div></div>';
                     }
                     //console.log(cate);
@@ -217,6 +217,18 @@ var ProductController = {
                 }
                 console.log('Update Ajax Ẩn/Hiện thành công!')
                 res.end('Update Ajax Ẩn/Hiện thành công!');
+            });
+        }
+    },
+    highlight:  function(req, res) {
+        if (req.xhr || req.headers.accept.indexOf('json') > -1) {
+            Product.highlight(req.body,getTimeNow,function(err,result){
+                if(err){
+                    res.end();
+                    console.log(err);
+                }
+                console.log('Update Ajax highlight thành công!')
+                res.end('Update Ajax highlight thành công!');
             });
         }
     },

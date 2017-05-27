@@ -82,6 +82,7 @@
 						<span class="title">Dashboard</span>
 					</a>
 				</li>
+				{{#ifCond user.role '==' 1}}
 				<li class="has-sub">
 					<a href="#">
 						<i class="entypo-layout"></i>
@@ -100,6 +101,7 @@
 						</li>
 					</ul>
 				</li>
+				{{/ifCond}}
 				<li class="has-sub">
 					<a href="#">
 						<i class="entypo-layout"></i>
@@ -116,6 +118,8 @@
 								<span class="title">Thêm sản phẩm mới</span>
 							</a>
 						</li>
+						
+
 					</ul>
 				</li>
 			</ul>
@@ -125,6 +129,7 @@
 	</div>
 	
 	{{{body}}}
+
 
 
 	<!-- Imported styles on this page -->

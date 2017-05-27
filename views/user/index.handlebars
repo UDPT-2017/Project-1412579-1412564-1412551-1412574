@@ -3,120 +3,39 @@
 	<div class="shoes"> 
 		<div class="container"> 
 			<div class="product-one">
+			{{#each get4}}
 				<div class="col-md-3 product-left"> 
 					<div class="p-one simpleCart_shelfItem">							
-							<a href="single.html">
-								<img src="images/shoes-1.png" alt="" />
+							<a href="/san-pham/{{id}}-{{alias}}.html">
+								<img src="/product/{{image}}" alt="" />
 								<div class="mask">
-									<span>Quick View</span>
+									<span>Xem ngay</span>
 								</div>
 							</a>
-						<h4>Aenean placerat</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">$329</span></a></p>
+						<h4>{{name}}</h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
 					
 					</div>
 				</div>
-				<div class="col-md-3 product-left"> 
-					<div class="p-one simpleCart_shelfItem">
-						
-						<a href="single.html">
-								<img src="images/shoes-2.png" alt="" />
-								<div class="mask">
-									<span>Quick View</span>
-								</div>
-							</a>
-						<h4>Aenean placerat</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">$329</span></a></p>
-						
-					</div>
-				</div>
-				<div class="col-md-3 product-left"> 
-					<div class="p-one simpleCart_shelfItem">
-						
-						<a href="single.html">
-								<img src="images/shoes-3.png" alt="" />
-								<div class="mask">
-									<span>Quick View</span>
-								</div>
-							</a>
-						<h4>Aenean placerat</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">$329</span></a></p>
-						
-					</div>
-				</div>
-				<div class="col-md-3 product-left"> 
-					<div class="p-one simpleCart_shelfItem">
-						
-						<a href="single.html">
-								<img src="images/shoes-13.png" alt="" />
-								<div class="mask">
-									<span>Quick View</span>
-								</div>
-							</a>
-						<h4>Aenean placerat</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">$329</span></a></p>
-						
-					</div>
-				</div>
+				{{/each}}
 				<div class="clearfix"> </div>
 			</div>
 			<div class="product-one">
+				{{#each get4Offset}}
 				<div class="col-md-3 product-left"> 
-					<div class="p-one simpleCart_shelfItem">
-						
-						<a href="single.html">
-								<img src="images/shoes-5.png" alt="" />
+					<div class="p-one simpleCart_shelfItem">							
+							<a href="/san-pham/{{id}}-{{alias}}.html">
+								<img src="/product/{{image}}" alt="" />
 								<div class="mask">
-									<span>Quick View</span>
+									<span>Xem ngay</span>
 								</div>
 							</a>
-						<h4>Aenean placerat</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">$329</span></a></p>
-						
+						<h4>{{name}}</h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
+					
 					</div>
 				</div>
-				<div class="col-md-3 product-left"> 
-					<div class="p-one simpleCart_shelfItem">
-						
-						<a href="single.html">
-								<img src="images/shoes-6.png" alt="" />
-								<div class="mask">
-									<span>Quick View</span>
-								</div>
-							</a>
-						<h4>Aenean placerat</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">$329</span></a></p>
-						
-					</div>
-				</div>
-				<div class="col-md-3 product-left"> 
-					<div class="p-one simpleCart_shelfItem">
-						
-						<a href="single.html">
-								<img src="images/shoes-7.png" alt="" />
-								<div class="mask">
-									<span>Quick View</span>
-								</div>
-							</a>
-						<h4>Aenean placerat</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">$329</span></a></p>
-						
-					</div>
-				</div>
-				<div class="col-md-3 product-left"> 
-					<div class="p-one simpleCart_shelfItem">
-						
-						<a href="single.html">
-								<img src="images/shoes-8.png" alt="" />
-								<div class="mask">
-									<span>Quick View</span>
-								</div>
-							</a>
-						<h4>Aenean placerat</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">$329</span></a></p>
-						
-					</div>
-				</div>
+				{{/each}}
 				<div class="clearfix"> </div>
 			</div>
 		</div>
@@ -152,4 +71,5 @@
 		</div>
 	</div>
 	<!--end-abt-shoe-->
-	
+
+

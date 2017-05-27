@@ -209,4 +209,36 @@ module.exports = function(passport,pool) {
             });
         })
     );
+    passport.use(
+        'local-login-admin',
+        new LocalStrategy({
+            // by default, local strategy uses username and password, we will override with email
+            usernameField : 'email',
+            passwordField : 'password',
+            passReqToCallback : true // allows us to pass back the entire request to the callback
+        },
+        function(req, email, password, done) { // callback with email and password from our form
+            pool.query("SELECT * FROM users WHERE email = '" + email + "' and role > 0", function(err, rows){
+                 //console.log(rows.rows[0].password);
+                // console.log(bcrypt.hashSync(123456, null, null));
+                
+                if (err){
+                    return done(err);
+                }
+                if (rows.rows.length == 0) {
+                    console.log("Email not found!!!")
+                    return done(null, false, req.flash('loginMessage', 'Thông tin đăng nhập không chính xác!')); // req.flash is the way to set flashdata using connect-flash
+                }
+
+                // if the user is found but the password is wrong
+                if (!bcrypt.compareSync(password, rows.rows[0].password)){
+                    console.log("Password not matched")
+                    return done(null, false, req.flash('loginMessage', 'Thông tin đăng nhập không chính xác!')); // create the loginMessage and save it to session as flashdata
+                }
+                console.log('Auth successful!!!');
+                // all is well, return successful user
+                return done(null, rows.rows[0]);
+            });
+        })
+    );
 };
