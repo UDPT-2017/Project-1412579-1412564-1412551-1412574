@@ -1,0 +1,49 @@
+
+	<!--start-breadcrumbs-->
+	<div class="breadcrumbs">
+		<div class="container">
+			<div class="breadcrumbs-main">
+				<ol class="breadcrumb">
+					<li><a href="index.html">Home</a></li>
+					<li class="active">Forgot password</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<!--end-breadcrumbs-->
+	<!--start-account-->
+	<div class="account">
+		<div class="container"> 
+			<div class="account-bottom">
+				<div class="col-md-6 account-left">
+					<form method="post" action="/changepass">
+					<div class="account-top heading">
+						<h3>FORGOT PASSWORD</h3>
+					</div>
+					<div class="address">
+						<span>Email</span>
+						<input type="email" name="email"  required="required" />
+					</div>
+					<div class="address">
+						<span>Password 2</span>
+						<input type="password" name="password2" required="required" />
+					</div>
+					<div class="address">
+						<span>New password</span>
+						<input type="password" name="password" required="required" />
+					</div>
+					<div class="address">
+						<input type="submit" value="Change password">
+					</div>
+					</form>
+				</div>
+				<div class="clearfix"> </div>
+				<br/>
+				{{#if message}}
+			        <div class="alert alert-danger">{{message}}</div>
+			    {{/if}}
+			</div>
+		</div>
+	</div>
+	<!--end-account-->
+	

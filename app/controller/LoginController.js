@@ -25,7 +25,7 @@ var LoginController = {
 		passport.authenticate('local-login', function(err, user, info) {
 			if (err) { return next(err); }
 			// Redirect if it fails
-			if (!user) { return res.redirect('/login'); }
+			if (!user) { return res.redirect('/account'); }
 			req.logIn(user, function(err) {
 				if (err) { return next(err); }
 				// Redirect if it succeeds
@@ -64,13 +64,13 @@ var LoginController = {
         }
 	},
 
-	formSignup: function(req, res) {
+	formAccount: function(req, res) {
 		//console.log(req.flash('signupMessage'));
 		//var temp = req.flash('signupMessage')[0];
 		//console.log(temp);
 		//console.log(req.flash('signupMessage')[0]);
 		// render the page and pass in any flash data if it exists
-		res.render('signup',{ message: req.flash('signupMessage')[0] });
+		res.render('user/account',{ messagesig: req.flash('signupMessage')[0], messagelog: req.flash('loginMessage')[0] });
 	},
 	
 	logout: function(req, res) {
@@ -80,7 +80,19 @@ var LoginController = {
 	logoutAdmin: function(req, res) {
 		req.logout();
 		res.redirect('/admin');
+	},
+	signup: function(req, res){
+		passport.authenticate('local-signup', {
+			successRedirect : '/', // redirect to the secure profile section
+			failureRedirect : '/signup',
+			failureFlash : true // allow flash messages
+		});
+	},
+	formForgot: function(req, res) {
+		res.render('user/forgotpass',{ message: req.flash('forgotMessage')[0] });
 	}
+
+
 }
 
 module.exports = LoginController;
