@@ -1,11 +1,15 @@
 // app/routes.js
 
 var WelcomeController = require('../app/controller/WelcomeController');
-var LoginController = require('../app/controller/LoginController');
+var LoginController = require('../app/controller/LoginController.js');
 var AdminController = require('../app/controller/AdminController');
 var CategoryController = require('../app/controller/CategoryController');
 var ProductController = require('../app/controller/ProductController');
+
 var UserController = require('../app/controller/UserController');
+
+var CartController = require('../app/controller/CartController');
+
 
 var multer  =   require('multer');
 var storage =   multer.diskStorage({
@@ -22,12 +26,16 @@ var upload = multer({ storage : storage });
 module.exports = function(app, passport,pool) {
 
 	//Home
-	app.get('/', WelcomeController.index);
-	app.get('/danh-muc/:id-:alias', WelcomeController.cate);
-	app.get('/san-pham/:id-:alias', WelcomeController.product);
-	app.get('/loadmore', WelcomeController.loadmore);
+	app.get('/',  WelcomeController.index);
+	app.get('/danh-muc/:id-:alias',  WelcomeController.cate);
+	app.get('/san-pham/:id-:alias',  WelcomeController.product);
+	app.get('/loadmore',  WelcomeController.loadmore);
 	//Category
+
 	/*app.get('/admin/dashboard', isAdmin,AdminController.dashboard);	
+
+	app.get('/admin/dashboard', isAdmin,AdminController.dashboard);
+
 	app.get('/admin/category/add', isAdmin, isAdminAccess, CategoryController.add);
 	app.post('/admin/category/add', isAdmin, isAdminAccess, CategoryController.postadd);
 
@@ -54,7 +62,9 @@ module.exports = function(app, passport,pool) {
 
 	app.post('/admin/product/delete', isAdmin,ProductController.delete);
 	app.post('/admin/product/delete-img', isAdmin,ProductController.delimg);
-	app.post('/admin/product/delete-pImg', isAdmin,ProductController.delpImg);*/
+	app.post('/admin/product/delete-pImg', isAdmin,ProductController.delpImg);
+	*/
+
 
 
 
@@ -62,6 +72,14 @@ module.exports = function(app, passport,pool) {
 	app.get('/admin/dashboard', isAdmin,AdminController.dashboard);	
 	app.get('/admin/category/add',  isAdmin, CategoryController.add);
 	app.post('/admin/category/add',  isAdmin, CategoryController.postadd);
+
+	app.get('/admin/dashboard', AdminController.dashboard);	
+
+	app.get('/admin/dashboard', AdminController.dashboard);
+
+	app.get('/admin/category/add',  isAdminAccess, CategoryController.add);
+	app.post('/admin/category/add',  isAdminAccess, CategoryController.postadd);
+
 
 	app.get('/admin/category/edit/:id',  isAdmin, CategoryController.edit);
 	app.post('/admin/category/edit/:id',  isAdmin, CategoryController.postedit);
@@ -95,10 +113,20 @@ module.exports = function(app, passport,pool) {
 	app.get('/admin/user/add',  isAdmin, UserController.add);
 	app.post('/admin/user/add',  isAdmin, UserController.postadd);
 
+
 	
+
 
 	app.get('/admin', notAdmin, LoginController.formLoginAdmin);
 	app.post('/admin', notAdmin, LoginController.adminlogin);
+
+
+	app.use('/cart', isLoggedIn, CartController);
+
+
+	app.get('/admin', LoggedAdmin, LoginController.formLoginAdmin);
+	app.post('/admin', LoginController.adminlogin);
+
 
 	// show the login form
 	//app.get('/login', Logged, LoginController.formLogin);
@@ -164,7 +192,7 @@ function isLoggedIn(req, res, next) {
 		return next();
 
 	// if they aren't redirect them to the home page
-	res.redirect('/');
+	res.redirect('/login');
 }
 
 function Logged(req, res, next) {

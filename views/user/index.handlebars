@@ -1,76 +1,83 @@
-	{{>slider}}
-	{{>banner-bottom}}
-	<!--start-shoes--> 
-	<div class="shoes"> 
-		<div class="container"> 
-			<div class="product-one">
+
+<!--start-shoes-->
+<div class="shoes">
+	<div class="container">
+		<div class="product-one">
+
 			{{#each get4}}
-				<div class="col-md-3 product-left"> 
-					<div class="p-one simpleCart_shelfItem">							
-							<a href="/san-pham/{{id}}-{{alias}}.html">
-								<img src="/product/{{image}}" alt="" />
-								<div class="mask">
-									<span>Xem ngay</span>
-								</div>
-							</a>
-						<h4>{{name}}</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
-					
-					</div>
+			<div class="col-md-3 product-left">
+				<div class="p-one simpleCart_shelfItem">
+					<a href="/san-pham/{{id}}-{{alias}}.html">
+						<img src="/product/{{image}}" alt="" />
+						<div class="mask">
+							<span>Xem ngay</span>
+						</div>
+					</a>
+					<h4>{{name}}</h4>
+					{{#if ../user}}
+					<p><a class="item_add_cart" href="#" data-id="{{ id }}" data-price="{{ price }}"  data-name="{{ name }}"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
+					{{else}}
+					<p><a href="/login"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
+					{{/if}}
+
 				</div>
-				{{/each}}
-				<div class="clearfix"> </div>
 			</div>
-			<div class="product-one">
-				{{#each get4Offset}}
-				<div class="col-md-3 product-left"> 
-					<div class="p-one simpleCart_shelfItem">							
-							<a href="/san-pham/{{id}}-{{alias}}.html">
-								<img src="/product/{{image}}" alt="" />
-								<div class="mask">
-									<span>Xem ngay</span>
-								</div>
-							</a>
-						<h4>{{name}}</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
-					
-					</div>
+			{{/each}}
+			<div class="clearfix"> </div>
+		</div>
+		<div class="product-one">
+			{{#each get4Offset}}
+			<div class="col-md-3 product-left">
+				<div class="p-one simpleCart_shelfItem">
+					<a href="/san-pham/{{id}}-{{alias}}.html">
+						<img src="/product/{{image}}" alt="" />
+						<div class="mask">
+							<span>Xem ngay</span>
+						</div>
+					</a>
+					<h4>{{name}}</h4>
+					{{#if ../user}}
+					<p><a class="item_add_cart" href="#" data-id="{{ id }}" data-price="{{ price }}"  data-name="{{ name }}"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
+					{{else}}
+					<p><a href="/login"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
+					{{/if}}
 				</div>
-				{{/each}}
-				<div class="clearfix"> </div>
 			</div>
+			{{/each}}
+			<div class="clearfix"> </div>
 		</div>
 	</div>
-	<!--end-shoes-->
-	<!--start-abt-shoe-->
-	<div class="abt-shoe">
-		<div class="container"> 
-			<div class="abt-shoe-main">
-				<div class="col-md-4 abt-shoe-left">
-					<div class="abt-one">
-						<a href="single.html"><img src="images/abt-1.jpg" alt="" /></a>
-						<h4><a href="single.html">Cras dolor ligula</a></h4>
-						<p>Phasellus auctor vulputate egestas. Nulla facilisi. Cras dolor ligula, pharetra vitae efficitur ac, tempus vitae nisl. Aliquam erat volutpat. </p>
-					</div>
+</div>
+<!--end-shoes-->
+<!--start-abt-shoe-->
+<div class="abt-shoe">
+	<div class="container">
+		<div class="abt-shoe-main">
+			<div class="col-md-4 abt-shoe-left">
+				<div class="abt-one">
+					<a href="single.html"><img src="images/abt-1.jpg" alt="" /></a>
+					<h4><a href="single.html">Cras dolor ligula</a></h4>
+					<p>Phasellus auctor vulputate egestas. Nulla facilisi. Cras dolor ligula, pharetra vitae efficitur ac, tempus vitae nisl. Aliquam erat volutpat. </p>
 				</div>
-				<div class="col-md-4 abt-shoe-left">
-					<div class="abt-one">
-						<a href="single.html"><img src="images/abt-2.jpg" alt="" /></a>
-						<h4><a href="single.html">Cras dolor ligula</a></h4>
-						<p>Phasellus auctor vulputate egestas. Nulla facilisi. Cras dolor ligula, pharetra vitae efficitur ac, tempus vitae nisl. Aliquam erat volutpat. </p>
-					</div>
-				</div>
-				<div class="col-md-4 abt-shoe-left">
-					<div class="abt-one">
-						<a href="single.html"><img src="images/abt-3.jpg" alt="" /></a>
-						<h4><a href="single.html">Cras dolor ligula</a></h4>
-						<p>Phasellus auctor vulputate egestas. Nulla facilisi. Cras dolor ligula, pharetra vitae efficitur ac, tempus vitae nisl. Aliquam erat volutpat. </p>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
 			</div>
+			<div class="col-md-4 abt-shoe-left">
+				<div class="abt-one">
+					<a href="single.html"><img src="images/abt-2.jpg" alt="" /></a>
+					<h4><a href="single.html">Cras dolor ligula</a></h4>
+					<p>Phasellus auctor vulputate egestas. Nulla facilisi. Cras dolor ligula, pharetra vitae efficitur ac, tempus vitae nisl. Aliquam erat volutpat. </p>
+				</div>
+			</div>
+			<div class="col-md-4 abt-shoe-left">
+				<div class="abt-one">
+					<a href="single.html"><img src="images/abt-3.jpg" alt="" /></a>
+					<h4><a href="single.html">Cras dolor ligula</a></h4>
+					<p>Phasellus auctor vulputate egestas. Nulla facilisi. Cras dolor ligula, pharetra vitae efficitur ac, tempus vitae nisl. Aliquam erat volutpat. </p>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
 		</div>
 	</div>
-	<!--end-abt-shoe-->
+</div>
+<!--end-abt-shoe-->
 
 

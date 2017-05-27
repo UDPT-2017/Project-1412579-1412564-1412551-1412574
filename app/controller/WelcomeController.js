@@ -1,6 +1,7 @@
 //app/controller/WelcomeController.js
 var Cate = require('../model/category.js');
-var Product = require('../model/Product.js');
+var Product = require('../model/product.js');
+
 var WelcomeController = {
 	index: function(req, res) {
 		Cate.getAll(function(err,result){
@@ -23,13 +24,40 @@ var WelcomeController = {
 							res.end();
 							return console.log(err);
 						}
-						console.log(result);
-						res.render('user/index',{
-							cate: result,
-							getHighlight: getHighlight,
-							get4: get4,
-							get4Offset: get4Offset,
-						}); 
+						if(req.user)
+						{
+							var Order = require('../model/order.js')(req.user);
+							var gOrder;
+							Order.getCart()
+							.then(function(order) {
+								gOrder = order;
+								return order.countItems();
+							})
+							.then(function(count) {
+								console.log(req.user);
+								res.render('user/index',{
+									cate: result,
+									getHighlight: getHighlight,
+									get4: get4,
+									get4Offset: get4Offset,
+									currentUser: req.user,
+									countCart: count,
+									cart: gOrder,
+									isUser: 1
+								});
+							})
+							.catch(function(errors) {
+								console.log(errors);
+							});
+						}
+						else{
+							res.render('user/index',{
+								cate: result,
+								getHighlight: getHighlight,
+								get4: get4,
+								get4Offset: get4Offset,
+							});
+						}
 					});
 				});
 			});
@@ -43,6 +71,7 @@ var WelcomeController = {
 				return console.log(err);
 			}
 			Product.getByCateIdOffset(req.params.id,function(err,productOffset){
+				console.log(productOffset);
 				if(err){
 					res.end();
 					return console.log(err);
@@ -57,16 +86,42 @@ var WelcomeController = {
 							res.end();
 							return console.log(err);
 						}
-						res.render('user/products',{
-							product: product,
-							cate:cate,
-							productOffset,productOffset,
-							namecat,namecat
-
-						});
-					}); 
-				}); 
-			}); 
+						if(req.user){
+							//console.log(req.user);
+							var Order = require('../model/order.js')(req.user);
+							var gOrder;
+							Order.getCart()
+							.then(function(order) {
+								gOrder = order;
+								return order.countItems();
+							})
+							.then(function(count) {
+								console.log(req.user);
+								res.render('user/products',{
+									product: product,
+									cate:cate,
+									productOffset: productOffset,
+									namecat: namecat,
+									countCart: count,
+									cart: gOrder,
+									currentUser: req.user
+								});
+							})
+							.catch(function(errors) {
+								console.log(errors);
+							});
+						}
+						else{
+							res.render('user/products',{
+								product: product,
+								cate:cate,
+								productOffset: productOffset,
+								namecat: namecat,
+							});
+						}
+					});
+				});
+			});
 		});
 	},
 	product: function(req,res){
@@ -98,18 +153,44 @@ var WelcomeController = {
 								res.end();
 								return console.log(err);
 							}
-							res.render('user/single',{
-								product: product,
-								cate:cate,
-								random:random,
-								image:image,
-								namecat:namecat
-							});
+							if(req.user){
+								var Order = require('../model/order.js')(req.user);
+								var gOrder;
+								Order.getCart()
+								.then(function(order) {
+									gOrder = order;
+									return order.countItems();
+								})
+								.then(function(count) {
+									res.render('user/single',{
+										product: product,
+										cate:cate,
+										random:random,
+										image:image,
+										namecat:namecat,
+										countCart: count,
+										cart: gOrder,
+										currentUser: req.user
+									});
+								})
+								.catch(function(errors) {
+									console.log(errors);
+								});
+							}
+							else{
+								res.render('user/single',{
+									product: product,
+									cate:cate,
+									random:random,
+									image:image,
+									namecat:namecat,
+								});
+							}
 						});
-					}); 
-					
-				}); 
-			}); 
+					});
+
+				});
+			});
 		});
 	},
 	loadmore: function(req,res){
@@ -123,10 +204,11 @@ var WelcomeController = {
 				console.log('ajax loadmore thành công!');
 				res.end(JSON.stringify(result));
 			});
-			
+
 		}
 	}
 }
 
 module.exports = WelcomeController;
+
 
