@@ -24,27 +24,40 @@ var WelcomeController = {
 							res.end();
 							return console.log(err);
 						}
-						var Order = require('../model/order.js')(req.user);
-						var gOrder;
-						Order.getCart()
-						.then(function(order) {
-							gOrder = order;
-							return order.countItems();
-						})
-						.then(function(count) {
+						if(req.user)
+						{
+							var Order = require('../model/order.js')(req.user);
+							var gOrder;
+							Order.getCart()
+							.then(function(order) {
+								gOrder = order;
+								return order.countItems();
+							})
+							.then(function(count) {
+								console.log(req.user);
+								res.render('user/index',{
+									cate: result,
+									getHighlight: getHighlight,
+									get4: get4,
+									get4Offset: get4Offset,
+									currentUser: req.user,
+									countCart: count,
+									cart: gOrder,
+									isUser: 1
+								});
+							})
+							.catch(function(errors) {
+								console.log(errors);
+							});
+						}
+						else{
 							res.render('user/index',{
 								cate: result,
 								getHighlight: getHighlight,
 								get4: get4,
 								get4Offset: get4Offset,
-								currentUser: req.user,
-								countCart: count,
-								cart: gOrder
 							});
-						})
-						.catch(function(errors) {
-							console.log(errors);
-						});
+						}
 					});
 				});
 			});
@@ -58,6 +71,7 @@ var WelcomeController = {
 				return console.log(err);
 			}
 			Product.getByCateIdOffset(req.params.id,function(err,productOffset){
+				console.log(productOffset);
 				if(err){
 					res.end();
 					return console.log(err);
@@ -72,28 +86,39 @@ var WelcomeController = {
 							res.end();
 							return console.log(err);
 						}
-
-						var Order = require('../model/order.js')(req.user);
-						var gOrder;
-						Order.getCart()
-						.then(function(order) {
-							gOrder = order;
-							return order.countItems();
-						})
-						.then(function(count) {
+						if(req.user){
+							//console.log(req.user);
+							var Order = require('../model/order.js')(req.user);
+							var gOrder;
+							Order.getCart()
+							.then(function(order) {
+								gOrder = order;
+								return order.countItems();
+							})
+							.then(function(count) {
+								console.log(req.user);
+								res.render('user/products',{
+									product: product,
+									cate:cate,
+									productOffset: productOffset,
+									namecat: namecat,
+									countCart: count,
+									cart: gOrder,
+									currentUser: req.user
+								});
+							})
+							.catch(function(errors) {
+								console.log(errors);
+							});
+						}
+						else{
 							res.render('user/products',{
 								product: product,
 								cate:cate,
-								productOffse: productOffset,
+								productOffset: productOffset,
 								namecat: namecat,
-								currentUser: req.user,
-								countCart: count,
-								cart: gOrder
 							});
-						})
-						.catch(function(errors) {
-							console.log(errors);
-						});
+						}
 					});
 				});
 			});
@@ -128,28 +153,39 @@ var WelcomeController = {
 								res.end();
 								return console.log(err);
 							}
-							var Order = require('../model/order.js')(req.user);
-							var gOrder;
-							Order.getCart()
-							.then(function(order) {
-								gOrder = order;
-								return order.countItems();
-							})
-							.then(function(count) {
+							if(req.user){
+								var Order = require('../model/order.js')(req.user);
+								var gOrder;
+								Order.getCart()
+								.then(function(order) {
+									gOrder = order;
+									return order.countItems();
+								})
+								.then(function(count) {
+									res.render('user/single',{
+										product: product,
+										cate:cate,
+										random:random,
+										image:image,
+										namecat:namecat,
+										countCart: count,
+										cart: gOrder,
+										currentUser: req.user
+									});
+								})
+								.catch(function(errors) {
+									console.log(errors);
+								});
+							}
+							else{
 								res.render('user/single',{
 									product: product,
 									cate:cate,
 									random:random,
 									image:image,
 									namecat:namecat,
-									currentUser: req.user,
-									countCart: count,
-									cart: gOrder
 								});
-							})
-							.catch(function(errors) {
-								console.log(errors);
-							});
+							}
 						});
 					});
 
@@ -174,4 +210,5 @@ var WelcomeController = {
 }
 
 module.exports = WelcomeController;
+
 

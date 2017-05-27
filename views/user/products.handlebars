@@ -28,7 +28,11 @@
 								</div>
 							</a>
 						<h4>{{name}}</h4>
-						<p><a class="item_add_cart" href="#"  data-id="{{ id }}" data-price="{{ price }}"  data-name="{{ name }}"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
+						{{#if ../user}}
+						<p><a class="item_add_cart" href="#" data-id="{{ id }}" data-price="{{ price }}"  data-name="{{ name }}"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
+						{{else}}
+						<p><a href="/login"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
+						{{/if}}
 					</div>
 				</div>
 			{{/each}}
@@ -47,7 +51,7 @@
 								</div>
 							</a>
 						<h4>{{name}}</h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
+						<p><a class="item_add" href="javascript:void(0);"><i></i> <span class=" item_price">{{#fmNum price}}{{/fmNum}}</span></a></p>
 					</div>
 				</div>
 			{{/each}}

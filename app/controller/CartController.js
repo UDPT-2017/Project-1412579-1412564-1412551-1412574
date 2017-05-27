@@ -1,29 +1,32 @@
 var express = require('express');
 var router = express.Router();
-
+var Cate = require('../model/category.js');
 router.get('/checkout', function(req, res, next) {
   var Order = require('../model/order.js')(req.user);
   var gOrder;
   var gCount ;
-  Order.getCart()
-  .then(function(order) {
-    gOrder = order;
-    return order.countItems();
-  })
-  .then(function(count) {
-    gCount = count;
-    return gOrder.getAllItems();
-  })
-  .then(function(allItems) {
-    res.render('user/checkout',{
-      currentUser: req.user,
-      countCart: gCount,
-      cart: gOrder,
-      items: allItems
+  Cate.getAll(function(err,result){
+    Order.getCart()
+    .then(function(order) {
+      gOrder = order;
+      return order.countItems();
+    })
+    .then(function(count) {
+      gCount = count;
+      return gOrder.getAllItems();
+    })
+    .then(function(allItems) {
+      res.render('user/checkout',{
+        currentUser: req.user,
+        countCart: gCount,
+        cart: gOrder,
+        items: allItems,
+        cate:result
+      });
+    })
+    .catch(function(errors) {
+      console.log(errors);
     });
-  })
-  .catch(function(errors) {
-    console.log(errors);
   });
 });
 

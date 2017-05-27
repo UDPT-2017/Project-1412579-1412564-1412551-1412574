@@ -16,26 +16,27 @@
 		<div class="container">
 			<div class="ckeckout-top">
 			<div class=" cart-items heading">
-			 <h3>My Shopping Bag (3)</h3>
+			 <h3>Đơn hàng của tôi</h3>
 
 			<div class="in-check" >
 				<ul class="unit">
-					<li><span>Item</span></li>
-					<li><span>Product Name</span></li>
-					<li><span>Unit Price</span></li>
-					<li><span>Quantity</span></li>
+					<li><span>Hình ảnh sản phẩm</span></li>
+					<li><span>Tên sản phẩm</span></li>
+					<li><span>Đơn giá</span></li>
+					<li><span>Số lượng</span></li>
 					<li> </li>
 					<div class="clearfix"> </div>
 				</ul>
 				{{#each items as |item| }}
 					<ul class="cart-header">
 						<div class="close1 remove_item" data-id={{ item.product_id }}> </div>
-							<li class="ring-in"><a href="single.html" ><img src="images/s-1.jpg" class="img-responsive" alt=""></a>
+							<li class="ring-in"><a href="/san-pham/{{item.id}}-{{item.alias}}.html" ><img src="/product/{{item.image}}" class="img-responsive" alt=""></a>
 							</li>
 							<li><span>{{ item.product_name }}</span></li>
-							<li><span>$ {{ item.price }}</span></li>
+							<li><span>{{#fmNum item.price }}{{/fmNum}}</span></li>
 							<li><span id="quantity-{{ item.product_id }}">{{ item.quantity }}</span></li>
-							<li> <a href="single.html" class="add-cart cart-check item_add_cart_checkout" data-id="{{ item.product_id }}" data-price="{{ item.price }}"  data-name="{{ item.product_name }}" >ADD TO CART</a></li>
+							<li> <a href="javascript:void(0)" class="add-cart cart-check item_add_cart_checkout" data-id="{{ item.product_id }}" data-price="{{ item.price }}"  data-name="{{ item.product_name }}" >Thêm sản phẩm</a></li>
+							<li><span>Tổng tiền: {{#total item.price  item.quantity}}{{/total}}</span></li>
 						<div class="clearfix"> </div>
 					</ul>
 				{{/each}}
