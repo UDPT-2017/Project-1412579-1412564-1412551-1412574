@@ -3,7 +3,7 @@
 **Name of your app** là repository cho đồ án nhóm. Nhóm tối đa 4 thành viên.
 
 Thành viên:
-* [ ] **MSSV1** Tên sinh viên 1 (tên tài khoản github)
+* [x] **1412579** Vũ Minh Trí (boyvmt)
 * [ ] **MSSV2** Tên sinh viên 2 (tên tài khoản github)
 * [ ] **MSSV3** Tên sinh viên 2 (tên tài khoản github)
 * [ ] **MSSV4** Tên sinh viên 2 (tên tài khoản github)
@@ -14,13 +14,20 @@ URL: **URL hosting của bài tập**
 Trong đề tài, sinh viên cần mô tả các chức năng có thể thực hiện bên dưới. Sinh viên check vào các mục bên dưới và ghi mã sinh viên đã làm vào chức năng theo mẫu. Mục nào ko có MSSV là tính điểm theo nhóm. Cần sắp xếp các chức năng bên dưới theo thứ tự MSSV đã thực hiện.
 
 Yêu cầu **GIT**
-* [ ] Có sử dụng GIT.
+* [x] Có sử dụng GIT.
 * [ ] Sử dụng GIT theo Centralized Workflow.
 * [ ] Sử dụng GIT theo Feature Branch Workflow.
-* [ ] Sử dụng GIT theo Gitflow Workflow.
+* [x] Sử dụng GIT theo Gitflow Workflow.
 
 ## Mô tả chung ứng dụng
-Phần mô tả đặt vào đây
+
+### ROYAL Sneaker
+
+Đồ án xây dựng e-commerce website với tất cả chức năng mà một website e-commerce sở hữu, có thể thấy được các chức năng của người dùng như xem các sản phẩm, xem chi tiết sản phẩm, các danh mục, các trang tồn tại, thêm sản phẩm vào giỏ hàng, đặt hàng,...
+
+Ngoài ra phần Admin thao tác các phần như thêm/sửa/xoá/xem sản phẩm, các danh mục, đặt nổi bật sản phẩm, danh mục,...xem các user cũng như thiết lập quyền hạn cho các user. 
+
+Tất cả phần mô tả công nghệ sử dụng dưới đây được **1412579** lên kế hoạch và chia việc, mỗi phần các thành viên sẽ tự khai thác để làm đúng những yêu cầu đã được thầy thiết lập về các phần như Ajax, DOM, Validation,....
 
 ## Mô tả công nghệ sử dụng
 
@@ -54,29 +61,27 @@ Phần mô tả đặt vào đây
 
 ### Database
 
-* [ ] Xây dựng lược đồ quan hệ (các bảng, các thuộc tính). (**MSSV**)
+* [x] Xây dựng lược đồ quan hệ (các bảng, các thuộc tính). 
 
-* [ ] Cài đặt cơ sở dữ liệu với Postgres. (**MSSV**)
+* [x] Cài đặt cơ sở dữ liệu với Postgres. 
 
 ### Frontend
 
 #### User
 
-* [ ] Website layout theo kiến trúc MVC với các thành phần được tách thành nhiều module. (**MSSV**)
+* [x] Website layout theo kiến trúc MVC với các thành phần được tách thành nhiều module. (**1412579**)
 
-* [ ] Trang web được thiết kế sẽ bao gồm các trang: Trang chủ, trang chi tiết sản phẩm, trang danh sách sản phẩm theo danh mục, trang giỏ hàng, trang đăng nhập, trang gửi tin nhắn (email),...(Tất cả ) (**MSSV**)
+* [x] Trang web được thiết kế sẽ bao gồm các trang: Trang chủ, trang chi tiết sản phẩm, trang danh sách sản phẩm theo danh mục, trang giỏ hàng, trang đăng nhập, trang gửi tin nhắn (email),...(Tất cả)
 
-* [ ] Cho phép người dùng biết họ đang ở trang nào (sử dụng breadcrumb, highlight navigation bar,...). (**MSSV**)
+* [x] Cho phép người dùng biết họ đang ở trang nào (sử dụng breadcrumb, highlight navigation bar,...). 
 
-* [ ] Chỉnh sửa lại giao diện từ giao diện RAW. (**MSSV**)
+* [x] Chỉnh sửa giao diện trang chủ. (**1412579**)
 
-* [ ] Chỉnh sửa giao diện trang chủ. (**MSSV**)
+* [x] Chỉnh sửa giao diện trang danh mục. (**1412579**)
 
-* [ ] Chỉnh sửa giao diện trang danh mục. (**MSSV**)
+* [x] Chỉnh sửa giao diện trang chi tiết sản phẩm. (**1412579**)
 
-* [ ] Chỉnh sửa giao diện trang chi tiết sản phẩm. (**MSSV**)
-
-* [ ] Chỉnh sửa giao diện trang danh sách sản phẩm. (**MSSV**)
+* [x] Chỉnh sửa giao diện trang danh sách sản phẩm. (**1412579**)
 
 * [ ] Chỉnh sửa giao diện trang đăng nhập và đăng ký. (**MSSV**)
 
@@ -132,7 +137,13 @@ Phần mô tả đặt vào đây
 
 #### User
 
-* [ ] Đổ dữ liệu ra các view tuỳ theo chức năng (tự thêm)(**MSSV**)
+* [ ] Tiến hành thao thác đưa dữ liệu từ database ra trang chủ(**1412579**)
+
+* [ ] Tiến hành thao thác đưa dữ liệu từ database ra trang danh mục(**1412579**)
+
+* [ ] Tiến hành thao thác đưa dữ liệu thông tin sản phẩm ra trang chi tiết(**1412579**)
+
+* [ ] Xây dựng các điều hướng trong phần Navbar(**1412579**)
 
 * [ ] Xây dựng tính năng giỏ hàng, thêm/sửa/xoá (**MSSV**)
 
@@ -142,11 +153,10 @@ Phần mô tả đặt vào đây
 
 #### Tính năng xác nhận người dùng
 
-<<<<<<< HEAD
+
 * [x] Xây dựng tính năng đăng nhập (**1412579**)
-=======
+
 * [x] Xây dựng tính năng đăng nhập phần admin(**1412579**)
->>>>>>> feature/1412579-backend-category-product
 
 * [x] Xây dựng tính năng đăng nhập bằng Facebook (**1412579**)
 
@@ -156,7 +166,7 @@ Phần mô tả đặt vào đây
 
     * [x] Thể hiện các chức năng khác nhau trên cùng giao diện khi người dùng có quyền khác nhau (**1412579**)
 
-    * [x] Thể hiện lỗi khi không truy xuất được trang khi không có quyền (Lỗi 401) (**MSSV**)
+    * [ ] Thể hiện lỗi khi không truy xuất được trang khi không có quyền (Lỗi 401) (**MSSV**)
 
 #### Lập trình client
 
@@ -170,7 +180,7 @@ Phần mô tả đặt vào đây
 
 * [x] Kiểm tra dữ liệu form sửa sản phẩm (**1412579**)
 
-* [x] Kiểm tra dữ liệu form đăng ký (**1412579**)
+* [ ] Kiểm tra dữ liệu form đăng ký (**MSSV**)
 
 ##### Animation, sử dụng một số animation đơn giản để làm màu
 
