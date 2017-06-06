@@ -4,7 +4,7 @@
 
 Thành viên:
 * [x] **1412579** Vũ Minh Trí (boyvmt)
-* [ ] **MSSV2** Tên sinh viên 2 (tên tài khoản github)
+* [x] **1412564** Trần Thùy Bích Trâm (bichtramtran)
 * [ ] **MSSV3** Tên sinh viên 2 (tên tài khoản github)
 * [ ] **MSSV4** Tên sinh viên 2 (tên tài khoản github)
 URL: **URL hosting của bài tập**
@@ -85,7 +85,7 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [ ] Chỉnh sửa giao diện trang đăng nhập và đăng ký. (**MSSV**)
 
-* [ ] Xây dựng trang báo lỗi 401, 404, 500 (**MSSV**)
+* [x] Xây dựng trang báo lỗi 401, 404, 500 (**1412564**)
 
 #### Admin
 
