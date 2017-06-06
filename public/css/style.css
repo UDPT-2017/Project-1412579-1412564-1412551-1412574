@@ -497,8 +497,8 @@ ul.callbacks_tabs.callbacks2_tabs {
 	border:none;
 }
 .map iframe{
-	width:100%;
-	height:400px;
+	width:70%;
+	height:500px;
 }
 /*--end-map--*/
 /*--start-account--*/
