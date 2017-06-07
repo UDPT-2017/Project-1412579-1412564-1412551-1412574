@@ -83,9 +83,11 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [x] Chỉnh sửa giao diện trang danh sách sản phẩm. (**1412579**)
 
-* [ ] Chỉnh sửa giao diện trang đăng nhập và đăng ký. (**MSSV**)
+* [x] Chỉnh sửa giao diện trang đăng nhập và đăng ký. (**1412551**)
 
-* [ ] Xây dựng trang báo lỗi 401, 404, 500 (**MSSV**)
+* [x] Chỉnh sửa giao diện trang giỏ hàng/đặt hàng. (**1412421**)
+
+* [ ] Xây dựng trang báo lỗi 401, 404, 500 (**1412564**)
 
 #### Admin
 
@@ -99,15 +101,17 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [x] Chỉnh sửa giao diện Admin trang xem/xoá sản phẩm(**1412579**)
 
-* [ ] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) người dùng (sửa quyền,..). (**MSSV**)
+* [x] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) người dùng (sửa quyền,..). (**1412551**)
 
-* [ ] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) thông tin Footer. (**MSSV**)
+* [ ] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) thông tin Footer. (**1412574**)
 
-* [ ] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) thông tin trang chủ. (**MSSV**)
+* [ ] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) thông tin trang chủ. (**1412564**)
+
+* [ ] Chỉnh sửa giao diện trang cài đặt các hình ảnh slide. (**1412574**)
 
 * [ ] Còn rất nhiều như đặt hàng, liên hệ, email, hỗ trợ, fanpage,... (**MSSV**)
 
-* [ ] Xây dựng trang báo lỗi 401, 404, 500 (**MSSV**)
+* [ ] Xây dựng trang báo lỗi 401, 404, 500 (**1412564**)
 
 ### Backend
 
@@ -123,17 +127,17 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [x] Xây dựng tính năng xoá ảnh thumbnail/detail của danh mục bằng ajax. (**1412579**)
 
-* [ ] Xây dựng tính năng Sửa quyền/Xem/Xoá/Cấm người dùng. (**MSSV**)
+* [ ] Xây dựng tính năng Sửa quyền/Xem/Xoá/Cấm người dùng. (**1412551**)
 
-* [ ] Xây dựng tính năng xem đơn đặt hàng, chi tiết đơn đặt hàng. (**MSSV**)
+* [ ] Xây dựng tính năng xem đơn đặt hàng, chi tiết đơn đặt hàng. (**1412421**)
 
-* [ ] Xây dựng tính năng xử lý đơn đặt hàng, chi tiết chuyển hàng. (**MSSV**)
+* [ ] Xây dựng tính năng xử lý đơn đặt hàng, chi tiết chuyển hàng. (**1412421**)
 
-* [ ] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) thông tin Footer. (**MSSV**)
+* [ ] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) thông tin Footer. (**1412574**)
 
-* [ ] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) thông tin trang chủ. (**MSSV**)
+* [ ] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) thông tin trang chủ. (**1412564**)
 
-* [ ] Còn rất nhiều như đặt hàng, liên hệ, email, hỗ trợ, fanpage,... (**MSSV**)
+* [ ] Còn rất nhiều như đặt hàng, liên hệ, email, hỗ trợ, fanpage,... (**MSSV**) (Phần này sẽ tự chọn và tự làm thêm)
 
 #### User
 
@@ -145,11 +149,11 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [ ] Xây dựng các điều hướng trong phần Navbar(**1412579**)
 
-* [ ] Xây dựng tính năng giỏ hàng, thêm/sửa/xoá (**MSSV**)
+* [ ] Xây dựng tính năng giỏ hàng, thêm/sửa/xoá (**1412421**)
 
-* [ ] Xây dựng tính năng đặt hàng (**MSSV**)
+* [ ] Xây dựng tính năng đặt hàng (**1412421**)
 
-* [ ] Xây dựng tính năng xem thông tin tình trạng đơn hàng (**MSSV**)
+* [ ] Xây dựng tính năng xem thông tin tình trạng đơn hàng (**1412421**)
 
 #### Tính năng xác nhận người dùng
 
