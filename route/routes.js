@@ -124,10 +124,6 @@ module.exports = function(app, passport,pool) {
 	app.use('/cart', isLoggedIn, CartController);
 
 
-	app.get('/admin', LoggedAdmin, LoginController.formLoginAdmin);
-	app.post('/admin', LoginController.adminlogin);
-
-
 	// show the login form
 	//app.get('/login', Logged, LoginController.formLogin);
 	// process the login form
@@ -158,10 +154,12 @@ module.exports = function(app, passport,pool) {
 	// handle the callback after facebook has authenticated the user
 	app.get('/auth/facebook/callback',
 		passport.authenticate('facebook', {
-			successRedirect : '/mailbox',
+			successRedirect : '/',
 			failureRedirect : '/login'
 		}));
 
+	app.get('/editaccount',isLoggedIn, LoginController.formEditAccount);
+	app.post('/editaccount',isLoggedIn, LoginController.postEditAccount);
 	// =====================================
 	// LOGOUT ==============================
 	// =====================================
@@ -192,7 +190,7 @@ function isLoggedIn(req, res, next) {
 		return next();
 
 	// if they aren't redirect them to the home page
-	res.redirect('/login');
+	res.redirect('/account');
 }
 
 function Logged(req, res, next) {
