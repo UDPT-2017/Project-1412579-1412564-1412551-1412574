@@ -10,6 +10,7 @@ var UserController = require('../app/controller/UserController');
 
 var CartController = require('../app/controller/CartController');
 
+var SliderController = require('../app/controller/SliderController');
 
 var multer  =   require('multer');
 var storage =   multer.diskStorage({
@@ -69,53 +70,55 @@ module.exports = function(app, passport,pool) {
 
 
 
-	app.get('/admin/dashboard', isAdmin,AdminController.dashboard);	
-	app.get('/admin/category/add',  isAdmin, CategoryController.add);
-	app.post('/admin/category/add',  isAdmin, CategoryController.postadd);
+	app.get('/admin/dashboard', AdminController.dashboard);	
+	app.get('/admin/category/add',   CategoryController.add);
+	app.post('/admin/category/add',   CategoryController.postadd);
 
 	app.get('/admin/dashboard', AdminController.dashboard);	
 
 	app.get('/admin/dashboard', AdminController.dashboard);
 
-	app.get('/admin/category/add',  isAdminAccess, CategoryController.add);
-	app.post('/admin/category/add',  isAdminAccess, CategoryController.postadd);
+	app.get('/admin/category/add',   CategoryController.add);
+	app.post('/admin/category/add',   CategoryController.postadd);
 
 
-	app.get('/admin/category/edit/:id',  isAdmin, CategoryController.edit);
-	app.post('/admin/category/edit/:id',  isAdmin, CategoryController.postedit);
+	app.get('/admin/category/edit/:id',   CategoryController.edit);
+	app.post('/admin/category/edit/:id',   CategoryController.postedit);
 
-	app.get('/admin/category/list',  isAdmin, CategoryController.list);
+	app.get('/admin/category/list',   CategoryController.list);
 
-	app.post('/admin/category/update-visible',  isAdmin, CategoryController.visible);
+	app.post('/admin/category/update-visible',   CategoryController.visible);
 
-	app.post('/admin/category/delete',  isAdmin, CategoryController.delete);
+	app.post('/admin/category/delete',   CategoryController.delete);
 
 	//product
-	app.get('/admin/product/add', isAdmin, ProductController.add);
-	app.post('/admin/product/add', isAdmin, ProductController.postadd);
+	app.get('/admin/product/add',  ProductController.add);
+	app.post('/admin/product/add',  ProductController.postadd);
 
-	app.get('/admin/product/edit/:id', isAdmin, ProductController.edit);
-	app.post('/admin/product/edit/:id', isAdmin, ProductController.postedit);
+	app.get('/admin/product/edit/:id',  ProductController.edit);
+	app.post('/admin/product/edit/:id',  ProductController.postedit);
 
-	app.get('/admin/product/list', isAdmin, ProductController.list);
+	app.get('/admin/product/list',  ProductController.list);
 
-	app.post('/admin/product/update-visible', isAdmin, ProductController.visible);
-	app.post('/admin/product/update-highlight', isAdmin, ProductController.highlight);
+	app.post('/admin/product/update-visible',  ProductController.visible);
+	app.post('/admin/product/update-highlight',  ProductController.highlight);
 
-	app.post('/admin/product/delete', isAdmin, ProductController.delete);
-	app.post('/admin/product/delete-img', isAdmin, ProductController.delimg);
-	app.post('/admin/product/delete-pImg', isAdmin, ProductController.delpImg);
+	app.post('/admin/product/delete',  ProductController.delete);
+	app.post('/admin/product/delete-img',  ProductController.delimg);
+	app.post('/admin/product/delete-pImg',  ProductController.delpImg);
 
-	app.get('/admin/user/list',  isAdmin, UserController.list);
-	app.get('/admin/user/edit/:id',  isAdmin, UserController.edit);
-	app.post('/admin/user/delete',  isAdmin, UserController.delete);
-	app.post('/admin/user/edit',  isAdmin, UserController.postedit);
-	app.get('/admin/user/add',  isAdmin, UserController.add);
-	app.post('/admin/user/add',  isAdmin, UserController.postadd);
+	app.get('/admin/user/list',   UserController.list);
+	app.get('/admin/user/edit/:id',   UserController.edit);
+	app.post('/admin/user/delete',   UserController.delete);
+	app.post('/admin/user/edit',   UserController.postedit);
+	app.get('/admin/user/add',   UserController.add);
+	app.post('/admin/user/add',   UserController.postadd);
 
 
-	
-
+	app.get('/admin/slider/list',  SliderController.list);
+	app.get('/admin/slider/edit/:id',  SliderController.edit);
+	app.post('/admin/slider/edit/:id',  SliderController.postedit);
+	app.post('/admin/slider/delete-img',  SliderController.delimg);
 
 	app.get('/admin', notAdmin, LoginController.formLoginAdmin);
 	app.post('/admin', notAdmin, LoginController.adminlogin);

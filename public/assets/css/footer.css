@@ -1,0 +1,127 @@
+/*Footer*/
+
+footer {
+	background: #000;
+}
+
+footer h1 {
+	font-size: 18px;
+	font-family: Open Sans;
+	text-transform: uppercase;
+	border-bottom: 1px solid #2a2a2a;
+	padding-bottom: 18px;
+	margin-bottom: 18px;
+	margin-top: 0;
+	color: #fff;
+}
+
+.inner-footer {
+	padding: 50px 0;
+	position: relative;
+}
+
+.f-about form {
+	position: relative;
+}
+
+.f-about input[type="text"] {
+	font-size: 12px;
+	font-family: Open Sans;
+	font-style: italic;
+	color: #b2b2b2;
+	border:1px solid #2a2a2a;
+	width: 100%;
+	padding: 12px;
+	background: transparent;
+}
+
+
+.f-about input[type="submit"] {
+	background: url(//bizweb.dktcdn.net/100/028/476/themes/36830/assets/arrow.png?1487759766192) 0 no-repeat;
+	width: 7px;
+	height: 12px;
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	border:0;
+}
+
+.infos a {
+	font-size: 13px;
+	color: #6b6b6b;
+	margin: 0;
+	display: block;
+	font-family: Open Sans;
+	margin-bottom: 17px;
+}
+
+.infos a:hover {
+	color: #fff;
+}
+
+.accoun a {
+	font-size: 13px;
+	color: #6b6b6b;
+	margin: 0;
+	display: block;
+	font-family: Open Sans;
+	margin-bottom: 17px;
+}
+
+.accoun a:hover {
+	color: #fff;
+}
+
+.gettouch p i {
+	font-size: 15px;
+	color: #969696;
+	margin-right: 5px;
+}
+
+.gettouch p {
+	margin-bottom: 15px;
+}
+
+.gettouch li {
+	display: inline;
+	margin-right: 5px;
+}
+
+.footer-socials i {
+	display: inline-block;
+	border: 1px solid #2a2a2a;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 13px;
+	color: #969696;
+}
+
+.footer-socials i:hover {
+	background: #fff;
+	color: #000;
+}
+
+.copyright {
+	float: left;
+	font-size: 13px;
+	color: #6b6b6b;
+	margin: 0;
+	display: block;
+	font-family: Open Sans;
+}
+
+
+.copyright a{
+	color: #6b6b6b;
+}
+
+.payment {
+	float: right;
+}
+
+.last-div {
+	border-top: 1px solid #2a2a2a;
+	padding: 30px 0;
+}
