@@ -112,7 +112,7 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [ ] Còn rất nhiều như đặt hàng, liên hệ, email, hỗ trợ, fanpage,... (**MSSV**)
 
-* [ ] Xây dựng trang báo lỗi 401, 404, 500 (**1412564**)
+* [x] Xây dựng trang báo lỗi 401, 404, 500 (**1412564**)
 
 ### Backend
 
