@@ -215,6 +215,8 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 ##### Ajax
 * [x] AJAX xóa, update slider(**1412574**)
 
+* [x] AJAX xóa ảnh slider(**1412574**)
+
 * [x] AJAX xoá danh mục(**1412579**)
 
 * [x] AJAX xoá sản phẩm(**1412579**)
