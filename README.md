@@ -6,7 +6,8 @@ Thành viên:
 * [x] **1412579** Vũ Minh Trí (boyvmt)
 * [x] **1412564** Trần Thùy Bích Trâm (bichtramtran)
 * [x] **1412574** Đặng Văn Trí (DangVanTri)
-* [ ] **MSSV4** Tên sinh viên 2 (tên tài khoản github)
+* [x] **1412551** Nguyễn Đang Tích (ndtich)
+* [x] **1412421** Phạm Hữu Phước (Huuphuoc19)
 URL: **URL hosting của bài tập**
 
 ## Yêu cầu
