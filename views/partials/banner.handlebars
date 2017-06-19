@@ -2,15 +2,11 @@
 	<div class="bnr" id="home">
 		<div  id="top" class="callbacks_container">
 			<ul class="rslides" id="slider4">
+			{{#each slider}}
 			    <li>
-					<div class="banner-1"><img style="margin: 0px auto;" class="img-responsive" src="../images/banner.jpg"></div>
+					<div class="slider"><img style="margin: 0px auto;" class="img-responsive" src="../images/{{image}}"></div>
 				</li>
-				<li>
-					<div class="banner-2"><img style="margin: 0px auto;" class="img-responsive" src="../images/banner-2.jpg"></div>
-				</li>
-				<li>
-					<div class="banner-3"><img style="margin: 0px auto;" class="img-responsive" src="../images/banner-3.jpg"></div>
-				</li>
+			{{/each}}
 			</ul>
 		</div>
 		<div class="clearfix"> </div>

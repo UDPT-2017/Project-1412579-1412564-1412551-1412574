@@ -5,7 +5,7 @@
 Thành viên:
 * [x] **1412579** Vũ Minh Trí (boyvmt)
 * [x] **1412564** Trần Thùy Bích Trâm (bichtramtran)
-* [ ] **MSSV3** Tên sinh viên 2 (tên tài khoản github)
+* [x] **1412574** Đặng Văn Trí (DangVanTri)
 * [ ] **MSSV4** Tên sinh viên 2 (tên tài khoản github)
 URL: **URL hosting của bài tập**
 
@@ -87,6 +87,8 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [x] Chỉnh sửa giao diện trang giỏ hàng/đặt hàng. (**1412421**)
 
+* [x] Tạo thông tin Footer. . (**1412574**)
+
 * [x] Xây dựng trang báo lỗi 401, 404, 500 (**1412564**)
 
 
@@ -104,11 +106,11 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [x] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) người dùng (sửa quyền,..). (**1412551**)
 
-* [ ] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) thông tin Footer. (**1412574**)
+* [ ] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) thông tin Footer. (****)
 
 * [ ] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) thông tin trang chủ. (**1412564**)
 
-* [ ] Chỉnh sửa giao diện trang cài đặt các hình ảnh slide. (**1412574**)
+* [x] Chỉnh sửa giao diện trang cài đặt các hình ảnh slide. (**1412574**)
 
 * [ ] Còn rất nhiều như đặt hàng, liên hệ, email, hỗ trợ, fanpage,... (**MSSV**)
 
@@ -134,9 +136,9 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [ ] Xây dựng tính năng xử lý đơn đặt hàng, chi tiết chuyển hàng. (**1412421**)
 
-* [ ] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) thông tin Footer. (**1412574**)
+* [ ] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) thông tin Footer. (****)
 
-* [ ] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) thông tin trang chủ. (**1412564**)
+* [x] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) thông tin trang chủ. (**1412574**)
 
 * [ ] Còn rất nhiều như đặt hàng, liên hệ, email, hỗ trợ, fanpage,... (**MSSV**) (Phần này sẽ tự chọn và tự làm thêm)
 
@@ -197,6 +199,8 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [x] Thao tác DOM lấy thông tin id, class để thực hiện ajax nút switch ẩn hiện danh mục (**1412579**)
 
+* [x] Thao tác DOM lấy thông tin id để thực hiện ajax xoá ảnh slider (**1412574**)
+
 * [x] Thao tác DOM lấy thông tin id để thực hiện ajax xoá danh mục (**1412579**)
 
 * [x] Thao tác DOM lấy thông tin id, class để thực hiện ajax nút switch ẩn hiện sản phẩm (**1412579**)
@@ -206,6 +210,7 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 * [x] Thao tác DOM lấy thông tin id để xoá hình ảnh thumbnail/detail của sản phẩm sau đó append lại dữ liệu khác (**1412579**)
 
 ##### Ajax
+* [x] AJAX xóa, update slider(**1412574**)
 
 * [x] AJAX xoá danh mục(**1412579**)
 
