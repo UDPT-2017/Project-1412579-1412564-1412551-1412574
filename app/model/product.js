@@ -73,7 +73,7 @@ var Cate = {
 		});
 	},
 	get4: function(callback){
-		pool.query("select * from products where hide = 1 LIMIT 4", function(err, result){
+		pool.query("select * from products where hide = 1 order by id desc LIMIT 4", function(err, result){
 			if (err){
 				callback(err, null);
 			}
@@ -82,7 +82,7 @@ var Cate = {
 		});
 	},
 	get4Offset: function(callback){
-		pool.query("select * from products where hide = 1 LIMIT 4 OFFSET 4", function(err, result){
+		pool.query("select * from products where hide = 1 order by id desc LIMIT 4 OFFSET 4", function(err, result){
 			if (err){
 				callback(err, null);
 			}

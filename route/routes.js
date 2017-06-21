@@ -128,8 +128,8 @@ module.exports = function(app, passport,pool) {
 	app.get('/admin/logout', LoginController.logoutAdmin);
 
 	app.get('*',function(req,res){
-		res.render('user/404',{
-			layout: false,
+		res.render('error/error-404',{
+
 		});
 	})
 
@@ -190,5 +190,8 @@ function isAdminAccess(req, res, next) {
 		return next();
 
 	// if they are redirect them to the home page
-	res.end("401 - Unauthorized: Access is denied due to invalid credentials");
+	return res.render('error/error-401',{
+			layout: 'main-admin',
+			title: 'Access denied'
+		}); 
 }
