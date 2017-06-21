@@ -25,7 +25,8 @@ module.exports = function(passport,pool) {
         // pull in our app id and secret from our auth.js file
         clientID        : '279703059168509',
         clientSecret    : 'e0391fd78ccea9d0e8d8b417d8688e05',
-        callbackURL     : 'http://localhost:3000/auth/facebook/callback',
+        callbackURL     : 'https://project-579-564-551-571-420.herokuapp.com/auth/facebook/callback'
+        //callbackURL     : 'http://localhost:3000/auth/facebook/callback',
         profileFields   : ['id', 'emails', 'name','profileUrl','photos','friends'] //get field recall
 
     },
