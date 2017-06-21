@@ -8,7 +8,8 @@ Thành viên:
 * [x] **1412574** Đặng Văn Trí (DangVanTri)
 * [x] **1412551** Nguyễn Đang Tích (ndtich)
 * [x] **1412421** Phạm Hữu Phước (Huuphuoc19)
-URL: **URL hosting của bài tập**
+
+URL: **https://project-579-564-551-571-420.herokuapp.com/**
 
 ## Yêu cầu
 
