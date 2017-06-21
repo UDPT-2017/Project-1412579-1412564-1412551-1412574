@@ -33,7 +33,7 @@ module.exports = function(app, passport,pool) {
 	app.get('/loadmore',  WelcomeController.loadmore);
 	//Category
 
-	/*app.get('/admin/dashboard', isAdmin,AdminController.dashboard);	
+	app.get('/admin/dashboard', isAdmin,AdminController.dashboard);	
 
 	app.get('/admin/dashboard', isAdmin,AdminController.dashboard);
 
@@ -64,61 +64,18 @@ module.exports = function(app, passport,pool) {
 	app.post('/admin/product/delete', isAdmin,ProductController.delete);
 	app.post('/admin/product/delete-img', isAdmin,ProductController.delimg);
 	app.post('/admin/product/delete-pImg', isAdmin,ProductController.delpImg);
-	*/
-
-
-
-
-
-	app.get('/admin/dashboard', AdminController.dashboard);	
-	app.get('/admin/category/add',   CategoryController.add);
-	app.post('/admin/category/add',   CategoryController.postadd);
-
-	app.get('/admin/dashboard', AdminController.dashboard);	
-
-	app.get('/admin/dashboard', AdminController.dashboard);
-
-	app.get('/admin/category/add',   CategoryController.add);
-	app.post('/admin/category/add',   CategoryController.postadd);
-
-
-	app.get('/admin/category/edit/:id',   CategoryController.edit);
-	app.post('/admin/category/edit/:id',   CategoryController.postedit);
-
-	app.get('/admin/category/list',   CategoryController.list);
-
-	app.post('/admin/category/update-visible',   CategoryController.visible);
-
-	app.post('/admin/category/delete',   CategoryController.delete);
-
-	//product
-	app.get('/admin/product/add',  ProductController.add);
-	app.post('/admin/product/add',  ProductController.postadd);
-
-	app.get('/admin/product/edit/:id',  ProductController.edit);
-	app.post('/admin/product/edit/:id',  ProductController.postedit);
-
-	app.get('/admin/product/list',  ProductController.list);
-
-	app.post('/admin/product/update-visible',  ProductController.visible);
-	app.post('/admin/product/update-highlight',  ProductController.highlight);
-
-	app.post('/admin/product/delete',  ProductController.delete);
-	app.post('/admin/product/delete-img',  ProductController.delimg);
-	app.post('/admin/product/delete-pImg',  ProductController.delpImg);
-
-	app.get('/admin/user/list',   UserController.list);
-	app.get('/admin/user/edit/:id',   UserController.edit);
-	app.post('/admin/user/delete',   UserController.delete);
+	
+	app.get('/admin/user/list',  isAdmin, isAdminAccess, UserController.list);
+	app.get('/admin/user/edit/:id', isAdmin, isAdminAccess,  UserController.edit);
+	app.post('/admin/user/delete',  isAdmin, isAdminAccess, UserController.delete);
 	app.post('/admin/user/edit',   UserController.postedit);
-	app.get('/admin/user/add',   UserController.add);
-	app.post('/admin/user/add',   UserController.postadd);
+	app.get('/admin/user/add',  isAdmin, isAdminAccess, UserController.add);
+	app.post('/admin/user/add', isAdmin, isAdminAccess,  UserController.postadd);
 
-
-	app.get('/admin/slider/list',  SliderController.list);
-	app.get('/admin/slider/edit/:id',  SliderController.edit);
-	app.post('/admin/slider/edit/:id',  SliderController.postedit);
-	app.post('/admin/slider/delete-img',  SliderController.delimg);
+	app.get('/admin/slider/list',  isAdmin,SliderController.list);
+	app.get('/admin/slider/edit/:id',  isAdmin,SliderController.edit);
+	app.post('/admin/slider/edit/:id',  isAdmin,SliderController.postedit);
+	app.post('/admin/slider/delete-img', isAdmin, SliderController.delimg);
 
 	app.get('/admin', notAdmin, LoginController.formLoginAdmin);
 	app.post('/admin', notAdmin, LoginController.adminlogin);
