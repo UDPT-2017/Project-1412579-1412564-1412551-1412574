@@ -168,9 +168,9 @@ function notAdmin(req, res, next) {
 	// if user isnt authenticated in the session, carry on
 	if (!req.isAuthenticated())
 		return next();
-	else if(req.isAuthenticated()  && req.user.role == 0)
+	else if(req.isAuthenticated()  && req.user.role > 0)
 		return next();
-	res.redirect('/admin/dashboard');
+	return res.redirect('/');
 }
 
 function isAdmin(req, res, next) {
@@ -178,9 +178,10 @@ function isAdmin(req, res, next) {
 	// if user isnt authenticated in the session, carry on
 	if ( req.isAuthenticated() && req.user.role > 0)
 		return next();
-
+	else if(req.isAuthenticated() && req.user.role == 0)
+		return res.redirect('/');
 	// if they are redirect them to the home page
-	res.redirect('/admin');
+	return res.redirect('/admin');
 }
 
 function isAdminAccess(req, res, next) {
