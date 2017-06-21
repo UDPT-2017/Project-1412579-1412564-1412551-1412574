@@ -133,7 +133,7 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [x] Xây dựng tính năng xoá ảnh thumbnail/detail của danh mục bằng ajax. (**1412579**)
 
-* [ ] Xây dựng tính năng Sửa quyền/Xem/Xoá/Cấm người dùng. (**1412551**)
+* [x] Xây dựng tính năng Sửa quyền/Xem/Xoá/Cấm người dùng. (**1412551**)
 
 * [ ] Xây dựng tính năng xem đơn đặt hàng, chi tiết đơn đặt hàng. (**1412420**)
 
@@ -147,15 +147,15 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 #### User
 
-* [ ] Tiến hành thao thác đưa dữ liệu từ database ra trang chủ(**1412579**)
+* [x] Tiến hành thao thác đưa dữ liệu từ database ra trang chủ(**1412579**)
 
-* [ ] Tiến hành thao thác đưa dữ liệu từ database ra trang danh mục(**1412579**)
+* [x] Tiến hành thao thác đưa dữ liệu từ database ra trang danh mục(**1412579**)
 
-* [ ] Tiến hành thao thác đưa dữ liệu thông tin sản phẩm ra trang chi tiết(**1412579**)
+* [x] Tiến hành thao thác đưa dữ liệu thông tin sản phẩm ra trang chi tiết(**1412579**)
 
-* [ ] Xây dựng các điều hướng trong phần Navbar(**1412579**)
+* [x] Xây dựng các điều hướng trong phần Navbar(**1412579**)
 
-* [ ] Xây dựng tính năng giỏ hàng, thêm/sửa/xoá (**1412420**)
+* [x] Xây dựng tính năng giỏ hàng, thêm/sửa/xoá (**1412420**)
 
 * [ ] Xây dựng tính năng đặt hàng (**1412420**)
 
