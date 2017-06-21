@@ -1,14 +1,16 @@
-﻿# Project - *Name of your app*
+﻿# Project - *ROYAL Sneaker*
 
-**Name of your app** là repository cho đồ án nhóm. Nhóm tối đa 4 thành viên.
+**ROYAL Sneaker** là repository cho đồ án nhóm. Nhóm tối đa 4 thành viên.
 
 Thành viên:
 * [x] **1412579** Vũ Minh Trí (boyvmt)
 * [x] **1412564** Trần Thùy Bích Trâm (bichtramtran)
 * [x] **1412574** Đặng Văn Trí (DangVanTri)
 * [x] **1412551** Nguyễn Đang Tích (ndtich)
-* [x] **1412420** Phan Hữu Phước ([Huuphuoc19](https://github.com/Huuphuoc19/))
-URL: **URL hosting của bài tập**
+* [x] **1412421** Phạm Hữu Phước (Huuphuoc19)
+
+URL: **https://project-579-564-551-571-420.herokuapp.com/**
+
 
 ## Yêu cầu
 
@@ -17,8 +19,8 @@ Trong đề tài, sinh viên cần mô tả các chức năng có thể thực h
 Yêu cầu **GIT**
 * [x] Có sử dụng GIT.
 * [ ] Sử dụng GIT theo Centralized Workflow.
-* [ ] Sử dụng GIT theo Feature Branch Workflow.
-* [x] Sử dụng GIT theo Gitflow Workflow.
+* [x] Sử dụng GIT theo Feature Branch Workflow.
+* [ ] Sử dụng GIT theo Gitflow Workflow.
 
 ## Mô tả chung ứng dụng
 
@@ -131,7 +133,7 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [x] Xây dựng tính năng xoá ảnh thumbnail/detail của danh mục bằng ajax. (**1412579**)
 
-* [ ] Xây dựng tính năng Sửa quyền/Xem/Xoá/Cấm người dùng. (**1412551**)
+* [x] Xây dựng tính năng Sửa quyền/Xem/Xoá/Cấm người dùng. (**1412551**)
 
 * [ ] Xây dựng tính năng xem đơn đặt hàng, chi tiết đơn đặt hàng. (**1412420**)
 
@@ -145,15 +147,15 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 #### User
 
-* [ ] Tiến hành thao thác đưa dữ liệu từ database ra trang chủ(**1412579**)
+* [x] Tiến hành thao thác đưa dữ liệu từ database ra trang chủ(**1412579**)
 
-* [ ] Tiến hành thao thác đưa dữ liệu từ database ra trang danh mục(**1412579**)
+* [x] Tiến hành thao thác đưa dữ liệu từ database ra trang danh mục(**1412579**)
 
-* [ ] Tiến hành thao thác đưa dữ liệu thông tin sản phẩm ra trang chi tiết(**1412579**)
+* [x] Tiến hành thao thác đưa dữ liệu thông tin sản phẩm ra trang chi tiết(**1412579**)
 
-* [ ] Xây dựng các điều hướng trong phần Navbar(**1412579**)
+* [x] Xây dựng các điều hướng trong phần Navbar(**1412579**)
 
-* [ ] Xây dựng tính năng giỏ hàng, thêm/sửa/xoá (**1412420**)
+* [x] Xây dựng tính năng giỏ hàng, thêm/sửa/xoá (**1412420**)
 
 * [ ] Xây dựng tính năng đặt hàng (**1412420**)
 
@@ -242,16 +244,16 @@ Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2017] [Ứng dụng phân tán - HATU - 2017]
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+## Hướng dẫn
 
-        http://www.apache.org/licenses/LICENSE-2.0
+- Download repo này về máy bạn.
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+- Tải pgAdmin (postgresql), tạo database và backup file *final.backup* trong thư mục database.
+
+- Thực hiện lệnh: *npm install* để tải các package cần thiết để chạy ứng dụng.
+
+- sau đó sử dụng lệnh *node app* để chạy ứng dụng trên port 30000.
+
+

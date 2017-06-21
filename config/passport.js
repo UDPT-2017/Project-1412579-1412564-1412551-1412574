@@ -48,7 +48,7 @@ module.exports = function(passport,pool) {
                 } else {
 
                     var newFacebooker = {
-                        id: profile.id,
+                        idfb: profile.id,
                         token: token,
                         email: profile.emails[0].value,
                         fullname: profile.name.givenName + ' ' + profile.name.familyName,
@@ -58,18 +58,18 @@ module.exports = function(passport,pool) {
                     
                     console.log(profile.friends);
                     // if there is no user found with that facebook id, create them
-                    var insertQuery = "insert into users(fullname,phone,email,password) values('" + 
+                    var insertQuery = "insert into users(fullname,phone,email,password,role) values('" + 
                     newFacebooker.fullname  +"',"+ 
                     "null,'" + 
-                    newFacebooker.email +"',null"+ 
+                    newFacebooker.email +"',null,0"+ 
                     ") RETURNING id";
                     pool.query(insertQuery,function(err, rows) {
                         if (err)
                             return console.log(err);
-
+                        newFacebooker.id = rows.rows[0].id;
                         var insertQuery = "insert into user_facebook(id,idfb,token,picture,url) values('" + 
                         rows.rows[0].id  +"','"+ 
-                        newFacebooker.id +"','"+ 
+                        newFacebooker.idfb +"','"+ 
                         newFacebooker.token +"','"+ 
                         newFacebooker.picture +"','"+ 
                         newFacebooker.url +
@@ -77,11 +77,12 @@ module.exports = function(passport,pool) {
                         pool.query(insertQuery,function(err, rows) {
                             if (err)
                                 return console.log(err);     
-                           
+                            
                         });
+                        console.log(newFacebooker);
+                        return done(null, newFacebooker);
                     });
 
-                    return done(null, newFacebooker);
                 }
 
             });
