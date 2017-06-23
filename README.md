@@ -250,10 +250,12 @@ Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
 
 - Download repo này về máy bạn.
 
-- Tải pgAdmin (postgresql), tạo database và backup file *final.backup* trong thư mục database.
+- Tải pgAdmin (postgresql), tạo database và backup file *royalsneaker.backup* trong thư mục database.
+
+- Đổi tên file *example.env* thành *.env* và đổi thông số các trường trong đó phù hợp với database của bạn.
 
 - Thực hiện lệnh: *npm install* để tải các package cần thiết để chạy ứng dụng.
 
-- sau đó sử dụng lệnh *node app* để chạy ứng dụng trên port 30000.
+- sau đó sử dụng lệnh *node app* để chạy ứng dụng trên port 3000.
 
 
