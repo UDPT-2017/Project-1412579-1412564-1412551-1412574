@@ -256,6 +256,6 @@ Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
 
 - Thực hiện lệnh: *npm install* để tải các package cần thiết để chạy ứng dụng.
 
-- sau đó sử dụng lệnh *node app* để chạy ứng dụng trên port 3000.
+- Sau đó sử dụng lệnh *node app* để chạy ứng dụng trên port 3000.
 
 
