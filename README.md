@@ -260,4 +260,10 @@ Video demo của **1412579**
 
 - Sau đó sử dụng lệnh *node app* để chạy ứng dụng trên port 3000.
 
+## Account test
 
+- Admin đăng nhập với account: boy@gmail.com - pass: 1
+
+- Mod đăng nhập với account: boy@gmail.com - pass: 1
+
+- User hãy sử dụng đăng nhập với Facebook.
