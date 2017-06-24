@@ -235,11 +235,13 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 ## Demo
 
-Link ảnh GIF demo ứng dụng:
+Demo ứng dụng
 
-![Video Walkthrough](demo.gif)
+Video demo của **1412579**
 
-Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
+[![Demo Project - 1412579](https://img.youtube.com/vi/X_xz_DUPh44/0.jpg)](https://www.youtube.com/watch?v=X_xz_DUPh44)
+
+
 
 
 ## License
