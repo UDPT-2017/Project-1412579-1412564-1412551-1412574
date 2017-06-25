@@ -241,11 +241,11 @@ Video demo của **1412579**
 
 [![Demo Project - 1412579](https://img.youtube.com/vi/X_xz_DUPh44/0.jpg)](https://www.youtube.com/watch?v=X_xz_DUPh44)
 
-**1412564**
-
-[![1412564-Demo](https://lh4.googleusercontent.com/kF3t-C-ARGcAA5CnpqEPO0t4H3R1PBGaClrK89QfeiHdRXMGW5vpeY9uE9uDWXXksvXRFtTs48y8tu4=w1366-h635)](https://drive.google.com/file/d/0BxlKjkDCwRPPVUFaUnI5SHJ5X1E/view)
-
 **1412574**
+
+![](demo/1412574.gif)
+
+**1412564**
 
 ![](demo/1412564.gif)
 
