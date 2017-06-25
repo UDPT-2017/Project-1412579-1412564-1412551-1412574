@@ -52,21 +52,22 @@
 
 				<div class="col-md-6 account-left">
 					<form method="post" action="/login">
-					<div class="account-top heading">
-						<h3>REGISTERED CUSTOMERS</h3>
-					</div>
-					<div class="address">
-						<span>Email Address</span>
-						<input type="email" name="email" required="required" />
-					</div>
-					<div class="address">
-						<span>Password</span>
-						<input type="password" name="password" required="required" />
-					</div>
-					<div class="address new">
-						<a class="forgot" href="/forgot">Forgot Your Password?</a>
-						<input type="submit" value="Login">
-					</div>
+						<div class="account-top heading">
+							<h3>REGISTERED CUSTOMERS</h3>
+						</div>
+						<div class="address">
+							<span>Email Address</span>
+							<input type="email" name="email" required="required" />
+						</div>
+						<div class="address">
+							<span>Password</span>
+							<input type="password" name="password" required="required" />
+						</div>
+						<div class="address new">
+							<a class="forgot" href="/forgot">Forgot Your Password?</a>
+							<input type="submit" value="Login">
+						</div>
+						<a href="/auth/facebook" class="btn btn-primary btn-lg"><span class="fa fa-facebook"></span> Facebook</a>
 					</form>
 					<br/>
 					{{#if messagelog}}

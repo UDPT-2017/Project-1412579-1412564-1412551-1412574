@@ -174,6 +174,7 @@ a.simpleCart_empty {
   position: relative;
   float: left;
   width: 100%;
+  height: 50%;
 }
 .callbacks {
   position: relative;
@@ -192,24 +193,25 @@ a.simpleCart_empty {
 .callbacks_nav {
   	position: absolute;
   	-webkit-tap-highlight-color: rgba(0,0,0,0);
-  	top: 82%;
-	left: 14%;
+  	top: 52%;
+	  left: 0%;
   	opacity: 0.7;
   	z-index: 3;
   	text-indent: -9999px;
-  	overflow: hidden;
   	text-decoration: none;
-  	height: 30px;
-  	width: 30px;
-  	background: transparent url("../images/arrows.png") no-repeat left top;
+  	height: 61px;
+  	width: 38px;
+  	margin-top: -45px;
+  	background: transparent url("../images/themes.gif") no-repeat left top;
 }
 .callbacks_nav:active {
-  	opacity: 1.0;
+  	opacity: 0;
 }
 .callbacks_nav.next {
   	left: auto;
   	background-position: right top;
-  	right: 82.2%;
+  	right: 0;
+  	float:right;
 }
 .rslides {
   position: relative;

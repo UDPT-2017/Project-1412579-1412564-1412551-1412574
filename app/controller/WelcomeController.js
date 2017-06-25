@@ -1,66 +1,76 @@
 //app/controller/WelcomeController.js
 var Cate = require('../model/category.js');
 var Product = require('../model/product.js');
-
+var Slider = require('../model/slider.js');
 var WelcomeController = {
 	index: function(req, res) {
-		Cate.getAll(function(err,result){
+		Slider.getAll(function(err,slider){
 			if(err){
 				res.end();
 				return console.log(err);
 			}
-			Product.get4(function(err,get4){
+
+			Cate.getAll(function(err,result){
 				if(err){
 					res.end();
 					return console.log(err);
 				}
-				Product.get4Offset(function(err,get4Offset){
+				Product.get4(function(err,get4){
 					if(err){
 						res.end();
 						return console.log(err);
 					}
-					Product.getHighlight(function(err,getHighlight){
+					Product.get4Offset(function(err,get4Offset){
 						if(err){
 							res.end();
 							return console.log(err);
 						}
-						if(req.user)
-						{
-							var Order = require('../model/order.js')(req.user);
-							var gOrder;
-							Order.getCart()
-							.then(function(order) {
-								gOrder = order;
-								return order.countItems();
-							})
-							.then(function(count) {
-								console.log(req.user);
+						Product.getHighlight(function(err,getHighlight){
+							if(err){
+								res.end();
+								return console.log(err);
+							}
+							if(req.user)
+							{
+								var Order = require('../model/order.js')(req.user);
+								var gOrder;
+								Order.getCart()
+								.then(function(order) {
+									gOrder = order;
+									return order.countItems();
+								})
+								.then(function(count) {
+									console.log(req.user);
+									res.render('user/index',{
+										cate: result,
+										getHighlight: getHighlight,
+										get4: get4,
+										get4Offset: get4Offset,
+										currentUser: req.user,
+										countCart: count,
+										cart: gOrder,
+										isUser: 1,
+										slider: slider
+									});
+								})
+								.catch(function(errors) {
+									console.log(errors);
+								});
+							}
+							else{
 								res.render('user/index',{
 									cate: result,
 									getHighlight: getHighlight,
 									get4: get4,
 									get4Offset: get4Offset,
-									currentUser: req.user,
-									countCart: count,
-									cart: gOrder,
-									isUser: 1
+									slider: slider
 								});
-							})
-							.catch(function(errors) {
-								console.log(errors);
-							});
-						}
-						else{
-							res.render('user/index',{
-								cate: result,
-								getHighlight: getHighlight,
-								get4: get4,
-								get4Offset: get4Offset,
-							});
-						}
+							}
+						});
 					});
 				});
 			});
+
 		});
 	},
 	cate: function(req,res){

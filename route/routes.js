@@ -10,6 +10,7 @@ var UserController = require('../app/controller/UserController');
 
 var CartController = require('../app/controller/CartController');
 
+var SliderController = require('../app/controller/SliderController');
 
 var multer  =   require('multer');
 var storage =   multer.diskStorage({
@@ -32,7 +33,7 @@ module.exports = function(app, passport,pool) {
 	app.get('/loadmore',  WelcomeController.loadmore);
 	//Category
 
-	/*app.get('/admin/dashboard', isAdmin,AdminController.dashboard);	
+	app.get('/admin/dashboard', isAdmin,AdminController.dashboard);	
 
 	app.get('/admin/dashboard', isAdmin,AdminController.dashboard);
 
@@ -63,69 +64,24 @@ module.exports = function(app, passport,pool) {
 	app.post('/admin/product/delete', isAdmin,ProductController.delete);
 	app.post('/admin/product/delete-img', isAdmin,ProductController.delimg);
 	app.post('/admin/product/delete-pImg', isAdmin,ProductController.delpImg);
-	*/
-
-
-
-
-
-	app.get('/admin/dashboard', isAdmin,AdminController.dashboard);	
-	app.get('/admin/category/add',  isAdmin, CategoryController.add);
-	app.post('/admin/category/add',  isAdmin, CategoryController.postadd);
-
-	app.get('/admin/dashboard', AdminController.dashboard);	
-
-	app.get('/admin/dashboard', AdminController.dashboard);
-
-	app.get('/admin/category/add',  isAdminAccess, CategoryController.add);
-	app.post('/admin/category/add',  isAdminAccess, CategoryController.postadd);
-
-
-	app.get('/admin/category/edit/:id',  isAdmin, CategoryController.edit);
-	app.post('/admin/category/edit/:id',  isAdmin, CategoryController.postedit);
-
-	app.get('/admin/category/list',  isAdmin, CategoryController.list);
-
-	app.post('/admin/category/update-visible',  isAdmin, CategoryController.visible);
-
-	app.post('/admin/category/delete',  isAdmin, CategoryController.delete);
-
-	//product
-	app.get('/admin/product/add', isAdmin, ProductController.add);
-	app.post('/admin/product/add', isAdmin, ProductController.postadd);
-
-	app.get('/admin/product/edit/:id', isAdmin, ProductController.edit);
-	app.post('/admin/product/edit/:id', isAdmin, ProductController.postedit);
-
-	app.get('/admin/product/list', isAdmin, ProductController.list);
-
-	app.post('/admin/product/update-visible', isAdmin, ProductController.visible);
-	app.post('/admin/product/update-highlight', isAdmin, ProductController.highlight);
-
-	app.post('/admin/product/delete', isAdmin, ProductController.delete);
-	app.post('/admin/product/delete-img', isAdmin, ProductController.delimg);
-	app.post('/admin/product/delete-pImg', isAdmin, ProductController.delpImg);
-
-	app.get('/admin/user/list',  isAdmin, UserController.list);
-	app.get('/admin/user/edit/:id',  isAdmin, UserController.edit);
-	app.post('/admin/user/delete',  isAdmin, UserController.delete);
-	app.post('/admin/user/edit',  isAdmin, UserController.postedit);
-	app.get('/admin/user/add',  isAdmin, UserController.add);
-	app.post('/admin/user/add',  isAdmin, UserController.postadd);
-
-
 	
+	app.get('/admin/user/list',  isAdmin, isAdminAccess, UserController.list);
+	app.get('/admin/user/edit/:id', isAdmin, isAdminAccess,  UserController.edit);
+	app.post('/admin/user/delete',  isAdmin, isAdminAccess, UserController.delete);
+	app.post('/admin/user/edit',   UserController.postedit);
+	app.get('/admin/user/add',  isAdmin, isAdminAccess, UserController.add);
+	app.post('/admin/user/add', isAdmin, isAdminAccess,  UserController.postadd);
 
+	app.get('/admin/slider/list',  isAdmin,SliderController.list);
+	app.get('/admin/slider/edit/:id',  isAdmin,SliderController.edit);
+	app.post('/admin/slider/edit/:id',  isAdmin,SliderController.postedit);
+	app.post('/admin/slider/delete-img', isAdmin, SliderController.delimg);
 
 	app.get('/admin', notAdmin, LoginController.formLoginAdmin);
 	app.post('/admin', notAdmin, LoginController.adminlogin);
 
 
 	app.use('/cart', isLoggedIn, CartController);
-
-
-	app.get('/admin', LoggedAdmin, LoginController.formLoginAdmin);
-	app.post('/admin', LoginController.adminlogin);
 
 
 	// show the login form
@@ -158,10 +114,12 @@ module.exports = function(app, passport,pool) {
 	// handle the callback after facebook has authenticated the user
 	app.get('/auth/facebook/callback',
 		passport.authenticate('facebook', {
-			successRedirect : '/mailbox',
+			successRedirect : '/',
 			failureRedirect : '/login'
 		}));
 
+	app.get('/editaccount',isLoggedIn, LoginController.formEditAccount);
+	app.post('/editaccount',isLoggedIn, LoginController.postEditAccount);
 	// =====================================
 	// LOGOUT ==============================
 	// =====================================
@@ -170,8 +128,8 @@ module.exports = function(app, passport,pool) {
 	app.get('/admin/logout', LoginController.logoutAdmin);
 
 	app.get('*',function(req,res){
-		res.render('user/404',{
-			layout: false,
+		res.render('error/error-404',{
+
 		});
 	})
 
@@ -192,7 +150,7 @@ function isLoggedIn(req, res, next) {
 		return next();
 
 	// if they aren't redirect them to the home page
-	res.redirect('/login');
+	res.redirect('/account');
 }
 
 function Logged(req, res, next) {
@@ -210,9 +168,9 @@ function notAdmin(req, res, next) {
 	// if user isnt authenticated in the session, carry on
 	if (!req.isAuthenticated())
 		return next();
-	else if(req.isAuthenticated()  && req.user.role == 0)
+	else if(req.isAuthenticated()  && req.user.role > 0)
 		return next();
-	res.redirect('/admin/dashboard');
+	return res.redirect('/');
 }
 
 function isAdmin(req, res, next) {
@@ -220,9 +178,10 @@ function isAdmin(req, res, next) {
 	// if user isnt authenticated in the session, carry on
 	if ( req.isAuthenticated() && req.user.role > 0)
 		return next();
-
+	else if(req.isAuthenticated() && req.user.role == 0)
+		return res.redirect('/');
 	// if they are redirect them to the home page
-	res.redirect('/admin');
+	return res.redirect('/admin');
 }
 
 function isAdminAccess(req, res, next) {
@@ -232,5 +191,8 @@ function isAdminAccess(req, res, next) {
 		return next();
 
 	// if they are redirect them to the home page
-	res.end("401 - Unauthorized: Access is denied due to invalid credentials");
+	return res.render('error/error-401',{
+			layout: 'main-admin',
+			title: 'Access denied'
+		}); 
 }

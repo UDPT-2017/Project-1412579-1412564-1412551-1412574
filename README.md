@@ -1,13 +1,16 @@
-﻿# Project - *Name of your app*
+﻿# Project - *ROYAL Sneaker*
 
-**Name of your app** là repository cho đồ án nhóm. Nhóm tối đa 4 thành viên.
+**ROYAL Sneaker** là repository cho đồ án nhóm. Nhóm tối đa 4 thành viên.
 
 Thành viên:
 * [x] **1412579** Vũ Minh Trí (boyvmt)
 * [x] **1412564** Trần Thùy Bích Trâm (bichtramtran)
-* [ ] **MSSV3** Tên sinh viên 2 (tên tài khoản github)
-* [ ] **MSSV4** Tên sinh viên 2 (tên tài khoản github)
-URL: **URL hosting của bài tập**
+* [x] **1412574** Đặng Văn Trí (DangVanTri)
+* [x] **1412551** Nguyễn Đang Tích (ndtich)
+* [x] **1412421** Phạm Hữu Phước (Huuphuoc19)
+
+URL: **https://project-579-564-551-571-420.herokuapp.com/**
+
 
 ## Yêu cầu
 
@@ -16,8 +19,8 @@ Trong đề tài, sinh viên cần mô tả các chức năng có thể thực h
 Yêu cầu **GIT**
 * [x] Có sử dụng GIT.
 * [ ] Sử dụng GIT theo Centralized Workflow.
-* [ ] Sử dụng GIT theo Feature Branch Workflow.
-* [x] Sử dụng GIT theo Gitflow Workflow.
+* [x] Sử dụng GIT theo Feature Branch Workflow.
+* [ ] Sử dụng GIT theo Gitflow Workflow.
 
 ## Mô tả chung ứng dụng
 
@@ -25,7 +28,7 @@ Yêu cầu **GIT**
 
 Đồ án xây dựng e-commerce website với tất cả chức năng mà một website e-commerce sở hữu, có thể thấy được các chức năng của người dùng như xem các sản phẩm, xem chi tiết sản phẩm, các danh mục, các trang tồn tại, thêm sản phẩm vào giỏ hàng, đặt hàng,...
 
-Ngoài ra phần Admin thao tác các phần như thêm/sửa/xoá/xem sản phẩm, các danh mục, đặt nổi bật sản phẩm, danh mục,...xem các user cũng như thiết lập quyền hạn cho các user. 
+Ngoài ra phần Admin thao tác các phần như thêm/sửa/xoá/xem sản phẩm, các danh mục, đặt nổi bật sản phẩm, danh mục,...xem các user cũng như thiết lập quyền hạn cho các user.
 
 Tất cả phần mô tả công nghệ sử dụng dưới đây được **1412579** lên kế hoạch và chia việc, mỗi phần các thành viên sẽ tự khai thác để làm đúng những yêu cầu đã được thầy thiết lập về các phần như Ajax, DOM, Validation,....
 
@@ -45,7 +48,7 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 - Ngoài ra còn có thể sử dụng thêm hàng loạt package khác giúp tăng tốc lập trình và tối ưu hoá hơn so với việc thực hiện bằng tay như Passport.js (sử dụng để đăng nhập), Moment.js (sử dụng để xử lý thời gian), JQuery (Ajax, xử lý frontend), JQuery-Validation (kiểm tra input), multer (upload file).... (khi làm sẽ phát sinh thêm hàng loạt package khác)
 
-- Đặc biệt đó là đồ án này sẽ sử dụng Ajax rất nhiều giúp website mịn hơn và không phải reload quá nhiều. 
+- Đặc biệt đó là đồ án này sẽ sử dụng Ajax rất nhiều giúp website mịn hơn và không phải reload quá nhiều.
 
 ### Cần chuẩn bị gì để thực hiện đồ án
 
@@ -55,15 +58,15 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 - Xử lý với database, khai báo database.
 
-- Một chút kiến thức về Postgresql. 
+- Một chút kiến thức về Postgresql.
 
 ## Chức năng
 
 ### Database
 
-* [x] Xây dựng lược đồ quan hệ (các bảng, các thuộc tính). 
+* [x] Xây dựng lược đồ quan hệ (các bảng, các thuộc tính).
 
-* [x] Cài đặt cơ sở dữ liệu với Postgres. 
+* [x] Cài đặt cơ sở dữ liệu với Postgres.
 
 ### Frontend
 
@@ -73,7 +76,7 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [x] Trang web được thiết kế sẽ bao gồm các trang: Trang chủ, trang chi tiết sản phẩm, trang danh sách sản phẩm theo danh mục, trang giỏ hàng, trang đăng nhập, trang gửi tin nhắn (email),...(Tất cả)
 
-* [x] Cho phép người dùng biết họ đang ở trang nào (sử dụng breadcrumb, highlight navigation bar,...). 
+* [x] Cho phép người dùng biết họ đang ở trang nào (sử dụng breadcrumb, highlight navigation bar,...).
 
 * [x] Chỉnh sửa giao diện trang chủ. (**1412579**)
 
@@ -85,7 +88,9 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [x] Chỉnh sửa giao diện trang đăng nhập và đăng ký. (**1412551**)
 
-* [x] Chỉnh sửa giao diện trang giỏ hàng/đặt hàng. (**1412421**)
+* [x] Chỉnh sửa giao diện trang giỏ hàng/đặt hàng. (**1412420**)
+
+* [x] Tạo thông tin Footer. . (**1412574**)
 
 * [x] Xây dựng trang báo lỗi 401, 404, 500 (**1412564**)
 
@@ -104,11 +109,11 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [x] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) người dùng (sửa quyền,..). (**1412551**)
 
-* [ ] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) thông tin Footer. (**1412574**)
+* [ ] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) thông tin Footer. (****)
 
 * [ ] Chỉnh sửa giao diện trang Thêm/Sửa/Xem/Xoá (CRUD) thông tin trang chủ. (**1412564**)
 
-* [ ] Chỉnh sửa giao diện trang cài đặt các hình ảnh slide. (**1412574**)
+* [x] Chỉnh sửa giao diện trang cài đặt các hình ảnh slide. (**1412574**)
 
 * [ ] Còn rất nhiều như đặt hàng, liên hệ, email, hỗ trợ, fanpage,... (**MSSV**)
 
@@ -128,33 +133,33 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [x] Xây dựng tính năng xoá ảnh thumbnail/detail của danh mục bằng ajax. (**1412579**)
 
-* [ ] Xây dựng tính năng Sửa quyền/Xem/Xoá/Cấm người dùng. (**1412551**)
+* [x] Xây dựng tính năng Sửa quyền/Xem/Xoá/Cấm người dùng. (**1412551**)
 
-* [ ] Xây dựng tính năng xem đơn đặt hàng, chi tiết đơn đặt hàng. (**1412421**)
+* [ ] Xây dựng tính năng xem đơn đặt hàng, chi tiết đơn đặt hàng. (**1412420**)
 
-* [ ] Xây dựng tính năng xử lý đơn đặt hàng, chi tiết chuyển hàng. (**1412421**)
+* [ ] Xây dựng tính năng xử lý đơn đặt hàng, chi tiết chuyển hàng. (**1412420**)
 
-* [ ] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) thông tin Footer. (**1412574**)
+* [ ] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) thông tin Footer. (****)
 
-* [ ] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) thông tin trang chủ. (**1412564**)
+* [x] Xây dựng tính năng Thêm/Sửa/Xem/Xoá (CRUD) thông tin trang chủ. (**1412574**)
 
 * [ ] Còn rất nhiều như đặt hàng, liên hệ, email, hỗ trợ, fanpage,... (**MSSV**) (Phần này sẽ tự chọn và tự làm thêm)
 
 #### User
 
-* [ ] Tiến hành thao thác đưa dữ liệu từ database ra trang chủ(**1412579**)
+* [x] Tiến hành thao thác đưa dữ liệu từ database ra trang chủ(**1412579**)
 
-* [ ] Tiến hành thao thác đưa dữ liệu từ database ra trang danh mục(**1412579**)
+* [x] Tiến hành thao thác đưa dữ liệu từ database ra trang danh mục(**1412579**)
 
-* [ ] Tiến hành thao thác đưa dữ liệu thông tin sản phẩm ra trang chi tiết(**1412579**)
+* [x] Tiến hành thao thác đưa dữ liệu thông tin sản phẩm ra trang chi tiết(**1412579**)
 
-* [ ] Xây dựng các điều hướng trong phần Navbar(**1412579**)
+* [x] Xây dựng các điều hướng trong phần Navbar(**1412579**)
 
-* [ ] Xây dựng tính năng giỏ hàng, thêm/sửa/xoá (**1412421**)
+* [x] Xây dựng tính năng giỏ hàng, thêm/sửa/xoá (**1412420**)
 
-* [ ] Xây dựng tính năng đặt hàng (**1412421**)
+* [ ] Xây dựng tính năng đặt hàng (**1412420**)
 
-* [ ] Xây dựng tính năng xem thông tin tình trạng đơn hàng (**1412421**)
+* [ ] Xây dựng tính năng xem thông tin tình trạng đơn hàng (**1412420**)
 
 #### Tính năng xác nhận người dùng
 
@@ -197,6 +202,8 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [x] Thao tác DOM lấy thông tin id, class để thực hiện ajax nút switch ẩn hiện danh mục (**1412579**)
 
+* [x] Thao tác DOM lấy thông tin id để thực hiện ajax xoá ảnh slider (**1412574**)
+
 * [x] Thao tác DOM lấy thông tin id để thực hiện ajax xoá danh mục (**1412579**)
 
 * [x] Thao tác DOM lấy thông tin id, class để thực hiện ajax nút switch ẩn hiện sản phẩm (**1412579**)
@@ -205,7 +212,12 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [x] Thao tác DOM lấy thông tin id để xoá hình ảnh thumbnail/detail của sản phẩm sau đó append lại dữ liệu khác (**1412579**)
 
+* [x] Lấy thông tin liên quan đến giỏ hàng tiến hành thêm/xóa/sửa(**1412420**)
+
 ##### Ajax
+* [x] AJAX xóa, update slider(**1412574**)
+
+* [x] AJAX xóa ảnh slider(**1412574**)
 
 * [x] AJAX xoá danh mục(**1412579**)
 
@@ -219,28 +231,45 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 * [x] AJAX update ẩn/hiện sản phẩm bằng nút switch on/off(**1412579**)
 
+* [x] AJAX thêm xóa product trong giỏ hàng(**1412420**)
 
 ## Demo
 
-Link ảnh GIF demo ứng dụng:
+Demo ứng dụng
+
+Video demo của **1412579**
+
+[![Demo Project - 1412579](https://img.youtube.com/vi/X_xz_DUPh44/0.jpg)](https://www.youtube.com/watch?v=X_xz_DUPh44)
+
+**1412564**
 
 [![1412564-Demo](https://lh4.googleusercontent.com/kF3t-C-ARGcAA5CnpqEPO0t4H3R1PBGaClrK89QfeiHdRXMGW5vpeY9uE9uDWXXksvXRFtTs48y8tu4=w1366-h635)](https://drive.google.com/file/d/0BxlKjkDCwRPPVUFaUnI5SHJ5X1E/view)
 
-Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
+**1412574**
+
+![](demo/1412564.gif)
 
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2017] [Ứng dụng phân tán - HATU - 2017]
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+## Hướng dẫn
 
-        http://www.apache.org/licenses/LICENSE-2.0
+- Download repo này về máy bạn.
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+- Tải pgAdmin (postgresql), tạo database và backup file *royalsneaker.backup* trong thư mục database.
+
+- Đổi tên file *example.env* thành *.env* và đổi thông số các trường trong đó phù hợp với database của bạn.
+
+- Thực hiện lệnh: *npm install* để tải các package cần thiết để chạy ứng dụng.
+
+- Sau đó sử dụng lệnh *node app* để chạy ứng dụng trên port 3000.
+
+## Account test
+
+- Admin đăng nhập với account: boy@gmail.com - pass: 1
+
+- Mod đăng nhập với account: boy@gmail.com - pass: 1
+
+- User hãy sử dụng đăng nhập với Facebook.

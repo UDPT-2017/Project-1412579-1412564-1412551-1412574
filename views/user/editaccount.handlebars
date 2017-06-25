@@ -1,0 +1,98 @@
+
+	<div class="breadcrumbs">
+		<div class="container">
+			<div class="breadcrumbs-main">
+				<ol class="breadcrumb">
+					<li><a href="index.html">Home</a></li>
+					<li class="active">Update Account</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="main-content">
+		<div class="row">
+			<div class="col-md-12">
+					
+					<div class="panel panel-primary" data-collapsed="0">
+					
+						
+						{{#if message}}
+						    <div class="alert alert-success">{{message}}</div>
+						{{/if}}
+						<div class="panel-body">
+							
+							<form role="form" method="post" action="/editaccount" id="editcate" class="form-horizontal form-groups-bordered">
+								<div class="form-group">
+									<label class="col-sm-3 control-label">ID user</label>
+									<div class="col-sm-5">
+										<input type="text" class="form-control" value="{{user.id}}" disabled>
+										<input type="hidden" name="id" class="form-control" value="{{user.id}}">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Email</label>
+									
+									<div class="col-sm-5">
+										<input type="text" class="form-control" value="{{user.email}}" disabled>
+										<input type="hidden" name="email" class="form-control" value="{{user.email}}">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Full name</label>
+									
+									<div class="col-sm-5">
+										<input type="text" name="fullname" class="form-control" value="{{user.fullname}}" required>
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Số điện thoại</label>
+									
+									<div class="col-sm-5">
+										<input type="text" name="phone" class="form-control" value="{{user.phone}}" required>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Password mới(Để trống nếu không cần update)</label>
+									
+									<div class="col-sm-5">
+										<input type="hidden" name="password" class="form-control" value="{{user.password}}">
+										<input type="text" name="newpassword" class="form-control" value="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Password cấp 2 mới(Để trống nếu không cần update)</label>
+									
+									<div class="col-sm-5">
+									<input type="hidden" name="password2" class="form-control" value="{{user.pass2}}">
+										<input type="text" name="newpassword2" class="form-control" value="">
+									</div>
+								</div>
+								<input type="hidden" name="role" value="{{user.role}}">
+
+								<div class="form-group">	
+									<div class="col-sm-8" style="text-align: center;">
+							
+										<div class="bs-example">	
+											<button type="submit" class="btn btn-green btn-icon">
+												Thay đổi thông tin<i class="entypo-check"></i>
+											</button>
+										</div>
+										
+									</div>
+								</div>							
+							
+							</form>
+						</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		
+	</div>
+
+
+		
+
+

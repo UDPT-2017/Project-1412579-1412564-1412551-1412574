@@ -1,0 +1,96 @@
+
+	<div class="main-content">
+				
+		{{>header-admin}}
+		
+		<hr />
+		{{>breadcrum}}
+		<h2>{{title}}</h2>
+		{{#if message}}
+		    <div class="alert alert-success">{{message}}</div>
+		{{/if}}
+		<div class="row">
+			<div class="col-md-12">
+					
+					<div class="panel panel-primary" data-collapsed="0">
+					
+						<div class="panel-heading">
+							<div class="panel-title">
+								{{title}}
+							</div>
+							
+						</div>	
+
+						<script type="text/javascript">
+							jQuery( document ).ready( function( $ ) {
+								var $table1 = jQuery( '#table-1' );
+								
+								// Initialize DataTable
+								$table1.DataTable( {
+									"aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+									"bStateSave": true
+								});
+								
+							} );
+							</script>
+						
+						<div class="panel-body">
+						<table class="table table-bordered datatable" id="table-1">
+							<thead>
+								<tr>
+									<th>Ảnh hiện tại</th>
+									<th>Thao tác</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="odd gradeX">
+								{{#each slider}}
+									<td>
+										{{#if image}}
+										<img src="/images/{{image}}" height="auto" width="400">
+										{{else}}
+										<i>No image</i>
+										{{/if}}
+									</td>
+									
+									<td class="center">
+										<a href="/admin/slider/edit/{{id}}" class="btn btn-primary btn-sm btn-icon icon-left">
+											<i class="entypo-pencil"></i>
+											Sửa
+										</a>
+									</td>
+								</tr>
+								{{/each}}
+							</tbody>
+							<tfoot>
+								<tr>
+									<th>Ảnh hiện tại</th>
+									<th>Thao tác</th>
+								</tr>
+							</tfoot>
+						</table>	
+
+							
+						</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		
+		<!-- Footer -->
+		{{>footer-admin}}
+	</div>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			$('div.alert').delay(5000).slideUp();
+			
+		});	
+	</script>
+
+
+		
+
+
