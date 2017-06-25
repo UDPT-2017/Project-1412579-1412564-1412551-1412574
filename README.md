@@ -224,7 +224,7 @@ Tất cả phần mô tả công nghệ sử dụng dưới đây được **141
 
 Link ảnh GIF demo ứng dụng:
 
-[![1412564-Demo](https://lh4.googleusercontent.com/kF3t-C-ARGcAA5CnpqEPO0t4H3R1PBGaClrK89QfeiHdRXMGW5vpeY9uE9uDWXXksvXRFtTs48y8tu4=w1366-h635)](https://drive.google.com/file/d/0BxlKjkDCwRPPVUFaUnI5SHJ5X1E/view)
+[![1412564-Demo](https://drive.google.com/file/d/0BxlKjkDCwRPPLTBPVkJFMTZhalE/view)](https://drive.google.com/file/d/0BxlKjkDCwRPPVUFaUnI5SHJ5X1E/view)
 
 Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
 
