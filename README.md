@@ -249,9 +249,10 @@ Video demo của **1412579**
 
 ![](demo/1412564.gif)
 
+
 **1412551**
 
-![Video Walkthrough](1412551_demo.gif)
+![Video Walkthrough](demo/1412551_demo.gif)
 
 ## License
 
@@ -271,7 +272,7 @@ Video demo của **1412579**
 
 ## Account test
 
-- Admin đăng nhập với account: boy@gmail.com - pass: 1
+- Admin đăng nhập với account: itvmtri@gmail.com - pass: 1
 
 - Mod đăng nhập với account: boy@gmail.com - pass: 1
 
